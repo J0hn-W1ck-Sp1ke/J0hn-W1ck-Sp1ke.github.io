@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>KMP算法</title>
+    <link href="/2024/03/11/KMP/"/>
+    <url>/2024/03/11/KMP/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前缀函数和KMP"><a href="#前缀函数和KMP" class="headerlink" title="前缀函数和KMP"></a>前缀函数和KMP</h1><pre><code class="lang-cpp">#include &lt;iostream&gt;#include &lt;cstring&gt;using namespace std;const int N=1e6+10;int nxt[N];char text[N], pattern[N];void getNext(const char* s)//求模式串的前缀函数&#123;    int k=0;    int n=strlen(s);    for(int i=1; i&lt;n; ++i)    &#123;        while(k&gt;0 &amp;&amp; s[i]!=s[k]) k=nxt[k-1];        if(s[i]==s[k]) ++k;        nxt[i]=k;        //cout&lt;&lt;nxt[i]&lt;&lt;&quot; &quot;;    &#125;    //cout&lt;&lt;&quot;\n&quot;;&#125;void KMP()//匹配模式串和文本串&#123;    getNext(pattern);    int k=0;//k表示匹配的长度    int tlen=strlen(text);    int plen=strlen(pattern);    for(int i=0; i&lt;tlen; ++i)    &#123;        //text和pattern不匹配，且k&gt;0，表明text和patt有部分匹配        while(k&gt;0 &amp;&amp; pattern[k] != text[i]) k=nxt[k-1];//往前回溯        if(pattern[k] == text[i]) ++k;        //cout&lt;&lt;k&lt;&lt;&quot; &quot;;        if(k == plen)//k移动到pattern末端        &#123;            cout&lt;&lt;i-plen+1+1&lt;&lt;endl;//输出位置            k=nxt[k-1];//重新初始化，寻找下一个            //i=i-plen+1;//i定位到该位置，继续寻找下一个            //return i-plen+1;        &#125;    &#125;    //cout&lt;&lt;&quot;\n&quot;;    //return -1;&#125;int main()&#123;    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);    cin&gt;&gt;text;    cin&gt;&gt;pattern;    KMP();    for(int i=0; i&lt;strlen(pattern); ++i)        cout&lt;&lt;nxt[i]&lt;&lt;&quot; &quot;;    cout&lt;&lt;&quot;\n&quot;;&#125;</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法，字符串，字符串匹配</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Codeforces Round 919 Div2补题</title>
     <link href="/2024/01/14/cf_round919_div2/"/>
     <url>/2024/01/14/cf_round919_div2/</url>
