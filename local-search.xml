@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>HTML</title>
+    <link href="/2024/03/20/HTML/"/>
+    <url>/2024/03/20/HTML/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul><li>HTML元素以<strong>开始标签</strong>起始，以<strong>结束标签</strong>结束  </li><li>元素内容是开始标签与结束标签之间的内容  </li><li>空元素在<strong>开始标签中进行关闭</strong>  </li><li>元素可拥有<strong>属性</strong>  </li><li>元素可以嵌套，必须有始有终，不能交叉嵌套  </li><li>块(block)元素包含整块区域的内容，浏览器在块元素之间用空白边缘分隔开，浏览器会自动地在块元素的前后添加空行，<strong>以新行开始和结束</strong>  </li><li>内联(inline) 元素作用在一小部分内容上，浏览器允许多个内联元素出现在同一行，必须嵌在块元素中  </li></ul><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul><li>属性可以在元素中添加附加信息  </li><li>属性一般描述于开始标签  </li><li>属性总是以名称/值对的形式出现  </li><li>属性常用引用属性值 i.e. name=”value”  </li><li>常用属性  <ul><li>class  <ul><li>为html元素定义一个或多个类名（classname）(类名从样式文件引入)  </li><li>class=”多个class属性的引用”  </li></ul></li><li>id  <ul><li>定义元素的唯一id  </li><li>id=”唯一id”  </li></ul></li><li>style  <ul><li>规定元素的行内样式（inline style）  </li></ul></li><li>title  <ul><li>描述了元素的额外信息 （作为工具条使用）  </li></ul></li></ul></li></ul><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="头部元素容器-head"><a href="#头部元素容器-head" class="headerlink" title="头部元素容器 head"></a>头部元素容器 head</h3><ul><li>title  <ul><li>定义文档的<strong>标题</strong>（必需且唯一）  </li><li>浏览器工具栏中的标题、页面被添加到收藏夹时的标题、在搜索引擎结果中的页面标题  </li><li>支持全局属性  </li></ul></li><li>meta<ul><li>描述文档的<strong>元数据</strong>(空元素)  </li><li>指定字符编码，网页的描述，关键词，文件的最后修改时间，作者及其他元数据  </li><li>被使用浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 Web 服务调用  </li></ul></li></ul><h3 id="定义文档的主体-body"><a href="#定义文档的主体-body" class="headerlink" title="定义文档的主体 body"></a>定义文档的主体 body</h3><ul><li>h1 to h6  <ul><li>定义从大到小的<strong>标题</strong>（块）  </li></ul></li><li>hr  <ul><li>水平线分隔 HTML 页面中的内容（块，空元素）  </li></ul></li><li>&lt;!— 这是一个注释 —&gt;  <ul><li>注释（块，空元素）  </li><li>浏览器忽略注释  </li></ul></li><li>p  <ul><li>定义<strong>段落</strong>（块）  </li></ul></li><li>br  <ul><li>插入单个<strong>换行</strong>（内联，空元素）  </li></ul></li><li>文本格式化（内联）  <ul><li>em  <ul><li><strong>斜体</strong>字强调  </li></ul></li><li>strong  <ul><li><strong>粗体</strong>字强调  </li></ul></li></ul></li><li>a  <ul><li>设置<strong>超文本链接</strong>（内联）  </li><li>属性 <strong>href</strong> 指定链接目标的URL  </li><li>链接 i.e. href=”<a href="http://www.google.com">http://www.google.com</a>“  </li><li>锚点 i.e. href=”lectures.html”  </li></ul></li><li>img  <ul><li>在网页中<strong>插入图片</strong>（内联，空元素）  </li><li>源属性 <strong>src</strong> 指定图片的URL链接  </li><li>属性 <strong>alt</strong> 为图像定义一串预备的可替换的文本  </li></ul></li><li>table  <ul><li>定义<strong>表格</strong>（块）  </li><li>tr  <ul><li>定义表格行  </li></ul></li><li>th  <ul><li>定义表头  </li></ul></li><li>td  <ul><li>定义表格单元（内联）  </li></ul></li><li>caption  <ul><li>定义表格标题  </li></ul></li></ul></li><li>列表  <ul><li>ul  <ul><li>定义<strong>无序列表</strong>（块）  </li><li>li  <ul><li>定义列表项  </li></ul></li></ul></li><li>ol  <ul><li>定义<strong>有序列表</strong>（块）  </li><li>li  <ul><li>定义列表项  </li></ul></li></ul></li><li>dl  <ul><li>定义<strong>自定义列表</strong>（块）  </li><li>dt  <ul><li>定义列表项目  </li></ul></li><li>dd  <ul><li>定义列表项目的描述  </li></ul></li></ul></li></ul></li><li>blockquote  <ul><li>定义摘自另一个源的<strong>块引用</strong>（块）  </li><li>一般嵌套段落元素  </li></ul></li><li>div  <ul><li>组合其他 HTML 元素的容器（块）  </li><li>用于文档的区域布局  </li></ul></li><li>span  <ul><li>文本的容器（内联）  </li><li>组合文档中的行内元素  </li></ul></li><li>字符实体  <ul><li>在网页中表示任何unicode字符可以用&amp;xxx表示  </li></ul></li><li>code  <ul><li>定义计算机代码文本（内联）  </li></ul></li><li>pre  <ul><li>定义预格式化的文本（块）  </li><li>保留空格和换行符  </li></ul></li><li>form  <ul><li>创建<strong>表单</strong>（块）  </li><li>属性 action 定义表单数据提交的目标 URL  </li><li>属性 method 定义提交数据的 HTTP 方法  </li><li>label  <ul><li>为表单元素<strong>添加标签</strong>  </li><li>属性 for 定义标签  </li></ul></li><li>input  <ul><li>定义输入元素，创建文本输入框、密码框、单选按钮、复选框  </li><li>属性 type 定义输入框的类型  </li><li>属性 id 关联label元素  </li><li>属性 name 标识表单字段  </li></ul></li><li>select  <ul><li>创建下拉列表  </li><li>option  <ul><li>定义下拉列表中的选项  </li></ul></li></ul></li></ul></li><li>iframe  <ul><li>定义<strong>框架</strong>，在同一个浏览器窗口中显示不止一个页面  </li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Web</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Web，HTML</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Codeforces Round 934 Div2补题</title>
     <link href="/2024/03/19/cf_round934_div2/"/>
     <url>/2024/03/19/cf_round934_div2/</url>
