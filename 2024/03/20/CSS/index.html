@@ -16,22 +16,22 @@
   <meta name="author" content="Sp1ke">
   <meta name="keywords" content="">
   
-    <meta name="description" content="HTML元素 HTML元素以开始标签起始，以结束标签结束   元素内容是开始标签与结束标签之间的内容   空元素在开始标签中进行关闭   元素可拥有属性   元素可以嵌套，必须有始有终，不能交叉嵌套   块(block)元素包含整块区域的内容，浏览器在块元素之间用空白边缘分隔开，浏览器会自动地在块元素的前后添加空行，以新行开始和结束   内联(inline) 元素作用在一小部分内容上，浏览器允许多">
+    <meta name="description" content="CSS语法 selector {property:value;}   选择器selector，声明property:value;   &#x2F;*注释*&#x2F;    选择器 id选择器   #idname {property:value;}    指定标有特定 id 的 HTML 元素特定的样式   CSS中选择HTML元素     class选择器   .classname {property:value;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML">
-<meta property="og:url" content="http://www.sp1ke.xyz/2024/03/20/HTML/index.html">
+<meta property="og:title" content="CSS">
+<meta property="og:url" content="http://www.sp1ke.xyz/2024/03/20/CSS/index.html">
 <meta property="og:site_name" content="Sp1ke&#39;s blog">
-<meta property="og:description" content="HTML元素 HTML元素以开始标签起始，以结束标签结束   元素内容是开始标签与结束标签之间的内容   空元素在开始标签中进行关闭   元素可拥有属性   元素可以嵌套，必须有始有终，不能交叉嵌套   块(block)元素包含整块区域的内容，浏览器在块元素之间用空白边缘分隔开，浏览器会自动地在块元素的前后添加空行，以新行开始和结束   内联(inline) 元素作用在一小部分内容上，浏览器允许多">
+<meta property="og:description" content="CSS语法 selector {property:value;}   选择器selector，声明property:value;   &#x2F;*注释*&#x2F;    选择器 id选择器   #idname {property:value;}    指定标有特定 id 的 HTML 元素特定的样式   CSS中选择HTML元素     class选择器   .classname {property:value;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-20T05:45:57.033Z">
-<meta property="article:modified_time" content="2024-03-20T05:47:02.252Z">
+<meta property="article:published_time" content="2024-03-20T14:55:48.862Z">
+<meta property="article:modified_time" content="2024-03-20T14:56:13.533Z">
 <meta property="article:author" content="Sp1ke">
-<meta property="article:tag" content="Web，HTML">
+<meta property="article:tag" content="Web，CSS">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>HTML - Sp1ke&#39;s blog</title>
+  <title>CSS - Sp1ke&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="HTML"></span>
+            <span id="subtitle" data-typed-text="CSS"></span>
           
         </div>
 
@@ -220,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-20 13:45" pubdate>
-          2024年3月20日 下午
+        <time datetime="2024-03-20 22:55" pubdate>
+          2024年3月20日 晚上
         </time>
       </span>
     
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          934 字
+          2.2k 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          8 分钟
+          19 分钟
         
       </span>
     
@@ -280,216 +280,459 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">HTML</h1>
+            <h1 id="seo-header">CSS</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
-<li>HTML元素以<strong>开始标签</strong>起始，以<strong>结束标签</strong>结束  </li>
-<li>元素内容是开始标签与结束标签之间的内容  </li>
-<li>空元素在<strong>开始标签中进行关闭</strong>  </li>
-<li>元素可拥有<strong>属性</strong>  </li>
-<li>元素可以嵌套，必须有始有终，不能交叉嵌套  </li>
-<li>块(block)元素包含整块区域的内容，浏览器在块元素之间用空白边缘分隔开，浏览器会自动地在块元素的前后添加空行，<strong>以新行开始和结束</strong>  </li>
-<li>内联(inline) 元素作用在一小部分内容上，浏览器允许多个内联元素出现在同一行，必须嵌在块元素中  </li>
+                <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
+<li>selector {property:value;}  </li>
+<li>选择器selector，声明property:value;  </li>
+<li>/*注释*/  </li>
 </ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
-<li>属性可以在元素中添加附加信息  </li>
-<li>属性一般描述于开始标签  </li>
-<li>属性总是以名称/值对的形式出现  </li>
-<li>属性常用引用属性值 i.e. name=”value”  </li>
-<li>常用属性  <ul>
-<li>class  <ul>
-<li>为html元素定义一个或多个类名（classname）(类名从样式文件引入)  </li>
-<li>class=”多个class属性的引用”  </li>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+<li>id选择器  <ul>
+<li>#idname {property:value;}   </li>
+<li>指定标有<strong>特定</strong> id 的 HTML 元素特定的样式  </li>
+<li>CSS中选择HTML元素  </li>
 </ul>
 </li>
-<li>id  <ul>
-<li>定义元素的唯一id  </li>
-<li>id=”唯一id”  </li>
-</ul>
-</li>
-<li>style  <ul>
-<li>规定元素的行内样式（inline style）  </li>
-</ul>
-</li>
-<li>title  <ul>
-<li>描述了元素的额外信息 （作为工具条使用）  </li>
+<li>class选择器  <ul>
+<li>.classname {property:value;}  </li>
+<li>描述<strong>一组元素</strong>的样式，可以在多个元素中使用  </li>
+<li>HTML中选择CSS样式  </li>
+<li>p.classname {property:value;}  </li>
+<li>指定特定的所有 HTML 元素使用 class  </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="头部元素容器-head"><a href="#头部元素容器-head" class="headerlink" title="头部元素容器 head"></a>头部元素容器 head</h3><ul>
-<li>title  <ul>
-<li>定义文档的<strong>标题</strong>（必需且唯一）  </li>
-<li>浏览器工具栏中的标题、页面被添加到收藏夹时的标题、在搜索引擎结果中的页面标题  </li>
-<li>支持全局属性  </li>
-</ul>
-</li>
-<li>meta<ul>
-<li>描述文档的<strong>元数据</strong>(空元素)  </li>
-<li>指定字符编码，网页的描述，关键词，文件的最后修改时间，作者及其他元数据  </li>
-<li>被使用浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 Web 服务调用  </li>
+<h2 id="插入样式表"><a href="#插入样式表" class="headerlink" title="插入样式表"></a>插入样式表</h2><ul>
+<li>外部样式表  <ul>
+<li>在头部 head 中使用 <strong>link</strong> 标签（空元素）链接到样式表  </li>
+<li>\<link rel="stylesheet" type="text/css" href="mystyle.css"\>  </li>
+<li>属性 rel 定义当前文档与被链接文档之间的关系（必需）  </li>
+<li>属性 type 规定被链接文档的 MIME 类型  </li>
+<li>属性 href 规定外部资源（通常是样式表文件）的位置（URL）  </li>
 </ul>
 </li>
-</ul>
-<h3 id="定义文档的主体-body"><a href="#定义文档的主体-body" class="headerlink" title="定义文档的主体 body"></a>定义文档的主体 body</h3><ul>
-<li>h1 to h6  <ul>
-<li>定义从大到小的<strong>标题</strong>（块）  </li>
+<li>内部样式表  <ul>
+<li>在头部 head 中使用 <strong>style</strong> 标签定义内部样式表  </li>
 </ul>
 </li>
-<li>hr  <ul>
-<li>水平线分隔 HTML 页面中的内容（块，空元素）  </li>
+<li>内联样式  <ul>
+<li>标签内使用 style 样式属性指定CSS声明  </li>
 </ul>
 </li>
-<li>&lt;!— 这是一个注释 —&gt;  <ul>
-<li>注释（块，空元素）  </li>
-<li>浏览器忽略注释  </li>
+<li>多重样式优先级  <ul>
+<li><strong>内联&gt;内部&gt;外部&gt;浏览器默认</strong>  </li>
+<li>内联样式 &gt; id 选择器 &gt; 类选择器 = 伪类选择器 = 属性选择器 &gt; 标签选择器 = 伪元素选择器  </li>
 </ul>
 </li>
-<li>p  <ul>
-<li>定义<strong>段落</strong>（块）  </li>
-</ul>
-</li>
-<li>br  <ul>
-<li>插入单个<strong>换行</strong>（内联，空元素）  </li>
-</ul>
-</li>
-<li>文本格式化（内联）  <ul>
-<li>em  <ul>
-<li><strong>斜体</strong>字强调  </li>
-</ul>
-</li>
-<li>strong  <ul>
-<li><strong>粗体</strong>字强调  </li>
+<li>多重样式继承  <ul>
+<li>多个样式应用到同一个元素，可以被继承  </li>
+<li>不是所有样式都可以被继承  </li>
+<li>更紧密匹配的规则可以覆盖更通用的规则  </li>
+<li>按优先级继承，优先级相同新样式覆盖旧样式  </li>
 </ul>
 </li>
 </ul>
-</li>
-<li>a  <ul>
-<li>设置<strong>超文本链接</strong>（内联）  </li>
-<li>属性 <strong>href</strong> 指定链接目标的URL  </li>
-<li>链接 i.e. href=”<a target="_blank" rel="noopener" href="http://www.google.com">http://www.google.com</a>“  </li>
-<li>锚点 i.e. href=”lectures.html”  </li>
+<h2 id="分组和嵌套"><a href="#分组和嵌套" class="headerlink" title="分组和嵌套"></a>分组和嵌套</h2><h3 id="分组选择器"><a href="#分组选择器" class="headerlink" title="分组选择器"></a>分组选择器</h3><ul>
+<li>选择相同样式的元素  </li>
+<li>h1, h2, p{}  </li>
+</ul>
+<h3 id="嵌套选择器"><a href="#嵌套选择器" class="headerlink" title="嵌套选择器"></a>嵌套选择器</h3><ul>
+<li>适用于选择器内部的选择器的样式  </li>
+<li>.mark p{}  <ul>
+<li>为所有class=”mark”元素内的p元素指定一个样式  </li>
 </ul>
 </li>
-<li>img  <ul>
-<li>在网页中<strong>插入图片</strong>（内联，空元素）  </li>
-<li>源属性 <strong>src</strong> 指定图片的URL链接  </li>
-<li>属性 <strong>alt</strong> 为图像定义一串预备的可替换的文本  </li>
-</ul>
-</li>
-<li>table  <ul>
-<li>定义<strong>表格</strong>（块）  </li>
-<li>tr  <ul>
-<li>定义表格行  </li>
-</ul>
-</li>
-<li>th  <ul>
-<li>定义表头  </li>
-</ul>
-</li>
-<li>td  <ul>
-<li>定义表格单元（内联）  </li>
-</ul>
-</li>
-<li>caption  <ul>
-<li>定义表格标题  </li>
+<li>p.mark{}  <ul>
+<li>为所有class=”mark”的p元素指定一个样式  </li>
 </ul>
 </li>
 </ul>
+<h2 id="组合选择符"><a href="#组合选择符" class="headerlink" title="组合选择符"></a>组合选择符</h2><ul>
+<li>后代选择器  <ul>
+<li>空格分隔  </li>
+<li>选取某元素的<strong>后代</strong>元素  </li>
+</ul>
 </li>
-<li>列表  <ul>
-<li>ul  <ul>
-<li>定义<strong>无序列表</strong>（块）  </li>
-<li>li  <ul>
-<li>定义列表项  </li>
+<li>子元素选择器  <ul>
+<li>> 号分隔  </li>
+<li>选择作为某元素<strong>直接/一级子元素</strong>的元素</li>
+</ul>
+</li>
+<li>相邻兄弟选择器  <ul>
+<li>+ 号分隔  </li>
+<li>选择<strong>紧接</strong>在另一元素后的元素，且二者有<strong>相同父元素</strong>  </li>
+</ul>
+</li>
+<li>一般兄弟选择器  <ul>
+<li>~ 号分隔  </li>
+<li>选取<strong>所有</strong>指定元素之后的兄弟元素  </li>
 </ul>
 </li>
 </ul>
+<h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2><ul>
+<li>pseudo-classes  </li>
+<li>添加一些选择器的特殊效果  </li>
+<li>以<strong>选中元素为基准点</strong>，此元素的一些<strong>状态或属性</strong>  </li>
+<li>伪类选择元素<strong>基于的是当前元素处于的状态</strong>，或者说元素当前所具有的特性  </li>
+<li>语法  <ul>
+<li>选择器与伪类  <ul>
+<li>selector:pseudo-class {property:value;}  </li>
+</ul>
 </li>
-<li>ol  <ul>
-<li>定义<strong>有序列表</strong>（块）  </li>
-<li>li  <ul>
-<li>定义列表项  </li>
+<li>CSS类与伪类  </li>
+<li>selector.class:pseudo-class {property:value;}  </li>
+</ul>
+</li>
+<li>anchor 伪类  <ul>
+<li>以不同方式显示链接的不同状态  </li>
+<li>a:link{} 未访问  </li>
+<li>a:visited{} 已访问  </li>
+<li>a:hover{} 鼠标划过链接  </li>
+<li>a:active{} 已选中  </li>
+</ul>
+</li>
+<li>first-child 伪类  <ul>
+<li>选择父元素的第一个子元素  </li>
+</ul>
+</li>
+<li>lang 伪类  <ul>
+<li>为不同的语言定义特殊的规则  </li>
 </ul>
 </li>
 </ul>
-</li>
-<li>dl  <ul>
-<li>定义<strong>自定义列表</strong>（块）  </li>
-<li>dt  <ul>
-<li>定义列表项目  </li>
+<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><ul>
+<li>添加一些选择器的特殊效果  </li>
+<li>伪元素是对元素中的<strong>特定内容</strong>进行操作  </li>
+<li>设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种<strong>普通的选择器无法完成的工作</strong>  </li>
+<li>语法  <ul>
+<li>选择器与伪元素  <ul>
+<li>selector:pseudo-element {property:value;}  </li>
 </ul>
 </li>
-<li>dd  <ul>
-<li>定义列表项目的描述  </li>
+<li>CSS类与伪元素  <ul>
+<li>selector.class:pseudo-element {property:value;}  </li>
 </ul>
 </li>
 </ul>
 </li>
+<li>可以结合多个伪元素来使用  </li>
+<li>first-line 伪元素  <ul>
+<li>向文本的首行设置特殊样式  </li>
+<li>只能用于块级元素  </li>
 </ul>
 </li>
-<li>blockquote  <ul>
-<li>定义摘自另一个源的<strong>块引用</strong>（块）  </li>
-<li>一般嵌套段落元素  </li>
+<li>first-letter 伪元素  <ul>
+<li>向文本的首字母设置特殊样式  </li>
+<li>只能用于块级元素  </li>
 </ul>
 </li>
-<li>div  <ul>
-<li>组合其他 HTML 元素的容器（块）  </li>
-<li>用于文档的区域布局  </li>
+<li>before 伪元素  <ul>
+<li>在元素的内容前面插入新内容  </li>
 </ul>
 </li>
-<li>span  <ul>
-<li>文本的容器（内联）  </li>
-<li>组合文档中的行内元素  </li>
-</ul>
-</li>
-<li>字符实体  <ul>
-<li>在网页中表示任何unicode字符可以用&amp;xxx表示  </li>
-</ul>
-</li>
-<li>code  <ul>
-<li>定义计算机代码文本（内联）  </li>
-</ul>
-</li>
-<li>pre  <ul>
-<li>定义预格式化的文本（块）  </li>
-<li>保留空格和换行符  </li>
-</ul>
-</li>
-<li>form  <ul>
-<li>创建<strong>表单</strong>（块）  </li>
-<li>属性 action 定义表单数据提交的目标 URL  </li>
-<li>属性 method 定义提交数据的 HTTP 方法  </li>
-<li>label  <ul>
-<li>为表单元素<strong>添加标签</strong>  </li>
-<li>属性 for 定义标签  </li>
-</ul>
-</li>
-<li>input  <ul>
-<li>定义输入元素，创建文本输入框、密码框、单选按钮、复选框  </li>
-<li>属性 type 定义输入框的类型  </li>
-<li>属性 id 关联label元素  </li>
-<li>属性 name 标识表单字段  </li>
-</ul>
-</li>
-<li>select  <ul>
-<li>创建下拉列表  </li>
-<li>option  <ul>
-<li>定义下拉列表中的选项  </li>
+<li>after 伪元素  <ul>
+<li>在元素的内容之后插入新内容  </li>
 </ul>
 </li>
 </ul>
+<h2 id="CSS属性"><a href="#CSS属性" class="headerlink" title="CSS属性"></a>CSS属性</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li>定义HTML元素的背景  </li>
+<li>background-color  <ul>
+<li>定义元素的<strong>背景颜色</strong>  </li>
+<li>颜色值为十六进制、RGB或颜色名称  </li>
+</ul>
+</li>
+<li>background-image  <ul>
+<li>描述元素的<strong>背景图像</strong>  </li>
+<li>值为url(图像url)  </li>
+</ul>
+</li>
+<li>background-repeat  <ul>
+<li>设置背景图像<strong>水平或垂直平铺或不平铺</strong>  </li>
+<li>repeat-x, repeat-y, no-repeat  </li>
+</ul>
+</li>
+<li>background-attachment  <ul>
+<li>设置背景图像是否<strong>固定</strong>或者随着页面的其余部分<strong>滚动</strong>  </li>
+</ul>
+</li>
+<li>background-position  <ul>
+<li>设置背景图像的<strong>起始位置</strong>  </li>
+</ul>
+</li>
+<li>background  <ul>
+<li>简写，属性按以上顺序用空格分隔  </li>
+</ul>
+</li>
+</ul>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><ul>
+<li>color  <ul>
+<li><strong>文字颜色</strong>  </li>
+</ul>
+</li>
+<li>text-align  <ul>
+<li><strong>水平对齐方式</strong>  </li>
+<li>居中、左对齐、右对齐、两端对齐  </li>
+<li>center, left, right, justify  </li>
+</ul>
+</li>
+<li>text-decoration  <ul>
+<li><strong>修饰</strong>  </li>
+<li>无（删除链接的下划线）、上划线、中划线、下划线  </li>
+<li>none, overline, line-through, underline  </li>
+</ul>
+</li>
+<li>text-transform  <ul>
+<li><strong>文本转换</strong>  </li>
+<li>全大写、全小写、单词首字母大写  </li>
+<li>uppercase, lowercase, capitalize  </li>
+</ul>
+</li>
+<li>text-indent  <ul>
+<li><strong>文本缩进</strong>  </li>
+<li>像素、em、百分比  </li>
+<li>px, em, %  </li>
+</ul>
+</li>
+</ul>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><ul>
+<li>font-family  <ul>
+<li>文本的<strong>字体系列</strong>  </li>
+<li>字体系列的名称超过一个字，它必须用引号  </li>
+</ul>
+</li>
+<li>font-style  <ul>
+<li><strong>字体样式</strong>  </li>
+<li>正常、斜体、倾斜  </li>
+<li>normal, italic, oblique  </li>
+</ul>
+</li>
+<li>font-size  <ul>
+<li><strong>字体大小</strong>  </li>
+<li>像素、em、百分比  </li>
+<li>px, em, %  </li>
+</ul>
+</li>
+<li>font-variant  <ul>
+<li>设置小型大写字母的字体显示文本  </li>
+</ul>
+</li>
+<li>font-weight  <ul>
+<li><strong>字体的粗细</strong>  </li>
+<li>默认、粗体、更粗体、细  </li>
+<li>normal, bold, bolder, lighter  </li>
+</ul>
+</li>
+</ul>
+<h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><ul>
+<li>控制元素的<strong>高度和宽度</strong>，增加<strong>行间距</strong>  </li>
+<li>height  <ul>
+<li>设置元素的高度  </li>
+</ul>
+</li>
+<li>width  <ul>
+<li>设置元素的宽度  </li>
+</ul>
+</li>
+<li>max/min-height/width  <ul>
+<li>元素的最大/小高/宽度  </li>
+</ul>
+</li>
+<li>line-height  <ul>
+<li>设置行高  </li>
+</ul>
+</li>
+</ul>
+<h3 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h3><ul>
+<li>设置元素显示方式  </li>
+<li>display:none vs. visibility:hidden  <ul>
+<li>前者隐藏的元素不会占用任何空间，后者隐藏的元素仍占用与未隐藏之前一样的空间  </li>
+</ul>
+</li>
+<li>display:inline/block  <ul>
+<li>更改显示方式为内联/块元素  </li>
+</ul>
+</li>
+</ul>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ul>
+<li>指定元素的定位类型  </li>
+<li>position  <ul>
+<li>static  <ul>
+<li>默认值，<strong>没有定位</strong>，不受top等影响  </li>
+</ul>
+</li>
+<li>fixed  <ul>
+<li>位置相对于浏览器<strong>窗口</strong>是<strong>固定</strong>位置  </li>
+<li>窗口滚动也不会移动  </li>
+</ul>
+</li>
+<li>relative  <ul>
+<li>相对其正常位置定位  </li>
+<li>相对定位元素经常被用来作为绝对定位元素的<strong>容器块</strong>  </li>
+</ul>
+</li>
+<li>absolute  <ul>
+<li>位置相对于<strong>最近的已定位父元素或\<html\></strong>  </li>
+<li>定位的元素和其他元素重叠  </li>
+</ul>
+</li>
+<li>sticky  <ul>
+<li>基于用户的<strong>滚动位置</strong>来定位  </li>
+<li>元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位  </li>
+<li>必须指定至少一个上右下左才能使粘性定位生效  </li>
+</ul>
 </li>
 </ul>
 </li>
-<li>iframe  <ul>
-<li>定义<strong>框架</strong>，在同一个浏览器窗口中显示不止一个页面  </li>
+<li>重叠的元素  <ul>
+<li>属性 z-index 指定元素的堆叠顺序，大的显示在最前面  </li>
+<li>未指定 z-index 的两个定位元素重叠，最后定位在HTML代码中的元素将被显示在最前面  </li>
 </ul>
 </li>
+</ul>
+<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><ul>
+<li>控制内容溢出元素框时在对应的元素区间内添加滚动条  </li>
+<li>visible  <ul>
+<li>默认值。内容<strong>不会被修剪</strong>，会呈现在元素框之外  </li>
+</ul>
+</li>
+<li>hidden  <ul>
+<li>内容会被修剪，并且其余内容是<strong>不可见</strong>的  </li>
+</ul>
+</li>
+<li>scroll  <ul>
+<li>内容会被修剪，但是浏览器会<strong>显示滚动条</strong>以便查看其余的内容  </li>
+</ul>
+</li>
+<li>auto  <ul>
+<li>如果内容被修剪，则浏览器会<strong>显示滚动条</strong>以便查看其余的内容  </li>
+</ul>
+</li>
+<li>inherit  <ul>
+<li>规定应该从父元素继承 overflow 属性的值  </li>
+</ul>
+</li>
+</ul>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><ul>
+<li>设置元素向左或向右<strong>移动</strong>，其周围的元素也会<strong>重新排列</strong>  </li>
+<li>如果有空间的话，相邻的浮动元素将彼此相邻  </li>
+<li>clear  <ul>
+<li>指定元素两侧不能出现浮动元素，使元素不会重新排列  </li>
+<li>clear:both  </li>
+</ul>
+</li>
+<li>float  <ul>
+<li>left, right  </li>
+<li>none, inherit  </li>
+</ul>
+</li>
+</ul>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><ul>
+<li>元素居中对齐  <ul>
+<li>margin:auto;  </li>
+<li>未设置width则不起作用  </li>
+</ul>
+</li>
+<li>文本居中对齐  <ul>
+<li>text-align:center;  </li>
+</ul>
+</li>
+<li>图片居中对齐  <ul>
+<li>margin: auto;并将图片放到块元素中  </li>
+</ul>
+</li>
+<li>左右对齐  <ul>
+<li>定位方式  <ul>
+<li>position: absolute;  </li>
+</ul>
+</li>
+<li>浮动方式  <ul>
+<li>float: right;  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>垂直居中对齐  <ul>
+<li>padding: 70px 0;  </li>
+<li>line-height: 1.5;  </li>
+<li>position: absolute; transform: translate(-50%, -50%);  </li>
+</ul>
+</li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
+<li>所有HTML元素可以看作盒子，CSS封装周围的HTML元素  </li>
+<li>从外到内<ul>
+<li>Margin(<strong>外边距</strong>) 清除边框外的区域，外边距是透明的  </li>
+<li>Border(<strong>边框</strong>)  围绕在内边距和内容外的边框  </li>
+<li>Padding(<strong>内边距</strong>) 清除内容周围的区域，内边距是透明的  </li>
+<li>Content(<strong>内容</strong>) 盒子的内容，显示文本和图像  </li>
+</ul>
+</li>
+<li>宽度和高度  <ul>
+<li>width, height  </li>
+<li>是内容的宽度和高度  </li>
+</ul>
+</li>
+<li>总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距  </li>
+<li>总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距  </li>
+</ul>
+<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><ul>
+<li>border-width  <ul>
+<li>简写属性，为元素的所有边框<strong>设置宽度</strong>，或者单独地为各边边框设置宽度  </li>
+</ul>
+</li>
+<li>border-style  <ul>
+<li>必需属性，设置元素所有边框的样式，或者单独地为各边<strong>设置边框样式</strong>  </li>
+</ul>
+</li>
+<li>border-color  <ul>
+<li>简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别<strong>设置颜色</strong>  </li>
+</ul>
+</li>
+<li>简写属性单独地为各边设置的顺序<ul>
+<li>上-&gt;右-&gt;下-&gt;左  </li>
+</ul>
+</li>
+</ul>
+<h3 id="轮廓"><a href="#轮廓" class="headerlink" title="轮廓"></a>轮廓</h3><ul>
+<li>outline-color  <ul>
+<li>颜色  </li>
+</ul>
+</li>
+<li>outline-style  <ul>
+<li>样式  </li>
+</ul>
+</li>
+<li>outline-width  <ul>
+<li>宽度  </li>
+</ul>
+</li>
+<li>outline 是不占空间的  </li>
+</ul>
+<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><ul>
+<li>margin<ul>
+<li>简写属性，在一个声明中设置所有外边距属性  </li>
+<li>外边距是<strong>完全透明</strong>的  </li>
+<li>只能设置外边距的宽度  <ul>
+<li>auto, length, %  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>margin-bottom/left/right/top  </li>
+</ul>
+<h3 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h3><ul>
+<li>padding  <ul>
+<li>简写属性，在一个声明中设置所有填充属性  </li>
+<li>填充元素的背景颜色  </li>
+<li>只能设置填充的宽度  </li>
+</ul>
+</li>
+<li>padding-bottom/left/right/top  </li>
 </ul>
 
                 
@@ -524,7 +767,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Web%EF%BC%8CHTML/" class="print-no-link">#Web，HTML</a>
+        <a href="/tags/Web%EF%BC%8CCSS/" class="print-no-link">#Web，CSS</a>
       
     </div>
   
@@ -536,8 +779,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>HTML</div>
-      <div>http://www.sp1ke.xyz/2024/03/20/HTML/</div>
+      <div>CSS</div>
+      <div>http://www.sp1ke.xyz/2024/03/20/CSS/</div>
     </div>
     <div class="license-meta">
       
@@ -581,18 +824,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/20/CSS/" title="CSS">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/19/cf_round934_div2/" title="Codeforces Round 934 Div2补题">
-                        <span class="hidden-mobile">Codeforces Round 934 Div2补题</span>
+                      <a href="/2024/03/20/HTML/" title="HTML">
+                        <span class="hidden-mobile">HTML</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
