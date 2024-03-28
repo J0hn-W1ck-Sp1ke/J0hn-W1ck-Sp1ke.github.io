@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>SGU495</title>
+    <link href="/2024/03/28/SGU495/"/>
+    <url>/2024/03/28/SGU495/</url>
+    
+    <content type="html"><![CDATA[<h3 id="SGU495"><a href="#SGU495" class="headerlink" title="SGU495"></a>SGU495</h3><p>题意：n个奖励m个人，奖励拿完放空盒回去，求m个人拿到奖励的期望<br>分析：第一个人肯定能拿到奖励，dp[1]=1。考虑第i个人，若第i-1个人拿到奖励，则第i个人拿到奖励的概率为dp[i-1]*(dp[i-1]-1.0/n)，若第i-1个人未拿到奖励，则第i个人拿到奖励的概率与第i-1个人相同，为dp[i-1]*(1-dp[i-1])。期望为每个人拿到1个奖励，即1*dp[i]，故对概率求和即可<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">1e5</span>+<span class="hljs-number">5</span>;<br><span class="hljs-type">double</span> dp[N];<br><span class="hljs-type">int</span> n, m;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);<br>    dp[<span class="hljs-number">1</span>]=<span class="hljs-number">1.0</span>;<br>    <span class="hljs-type">double</span> ans=<span class="hljs-number">1.0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>; i&lt;=m; ++i)<br>    &#123;<br>        dp[i]=dp[i<span class="hljs-number">-1</span>]*(<span class="hljs-number">1.0</span><span class="hljs-number">-1.0</span>/n);<br>        ans+=dp[i];<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.9lf\n&quot;</span>, ans);<br>&#125;<br></code></pre></td></tr></table></figure></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>概率与期望</tag>
+      
+      <tag>动态规划</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>P8746</title>
     <link href="/2024/03/28/P8746/"/>
     <url>/2024/03/28/P8746/</url>
@@ -13,14 +40,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>刷题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法，动态规划，前缀和</tag>
+      <tag>动态规划，前缀和</tag>
       
     </tags>
     
@@ -38,14 +65,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>刷题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法，异或，博弈论</tag>
+      <tag>异或，博弈论</tag>
       
     </tags>
     
@@ -70,7 +97,7 @@
     
     <tags>
       
-      <tag>Web，JavaScript</tag>
+      <tag>JavaScript</tag>
       
     </tags>
     
@@ -95,7 +122,7 @@
     
     <tags>
       
-      <tag>比赛，规范</tag>
+      <tag>规范</tag>
       
     </tags>
     
@@ -120,7 +147,7 @@
     
     <tags>
       
-      <tag>Web，CSS</tag>
+      <tag>CSS</tag>
       
     </tags>
     
@@ -145,7 +172,7 @@
     
     <tags>
       
-      <tag>Web，HTML</tag>
+      <tag>HTML</tag>
       
     </tags>
     
@@ -170,11 +197,9 @@
     
     <tags>
       
-      <tag>补题</tag>
+      <tag>树的直径</tag>
       
-      <tag>图论</tag>
-      
-      <tag>字符串</tag>
+      <tag>回文串</tag>
       
     </tags>
     
@@ -199,7 +224,7 @@
     
     <tags>
       
-      <tag>算法，字符串，字符串匹配</tag>
+      <tag>字符串，字符串匹配</tag>
       
     </tags>
     
@@ -224,7 +249,11 @@
     
     <tags>
       
-      <tag>补题</tag>
+      <tag>最大公因数</tag>
+      
+      <tag>同余</tag>
+      
+      <tag>递推</tag>
       
     </tags>
     
@@ -249,7 +278,7 @@
     
     <tags>
       
-      <tag>数学，信息安全</tag>
+      <tag>数学</tag>
       
     </tags>
     
@@ -274,7 +303,7 @@
     
     <tags>
       
-      <tag>算法，图论，最短路</tag>
+      <tag>图论，最短路</tag>
       
     </tags>
     
