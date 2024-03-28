@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>POJ2151</title>
+    <link href="/2024/03/28/POJ2151/"/>
+    <url>/2024/03/28/POJ2151/</url>
+    
+    <content type="html"><![CDATA[<h3 id="POJ2151"><a href="#POJ2151" class="headerlink" title="POJ2151"></a>POJ2151</h3><p>题意：T个问题，M个队，已知每个队做出每个问题的概率，求所有人都至少做出一道且有人做出至少n道的概率<br>分析：<br>由容斥原理，P(所有人都至少做出一道且有人做出至少n道)=P(所有人都至少做出一道)-P(所有人都没做超过n道)<br>通过DP记录每个队做出几道题的概率，然后利用容斥原理计算<br>列举维度：第几个队伍，第几个题，做出了几道<br>列举决策：第j题没做出来 做出来了<br>DP方程：dp[i][j][k]=dp[i][j-1][k]*(1-p[i][j])+dp[i][j-1][k-1]*p[i][j]<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> M=<span class="hljs-number">35</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> T=<span class="hljs-number">1e3</span>+<span class="hljs-number">5</span>;<br><span class="hljs-type">double</span> dp[T][M][M];<br><span class="hljs-type">double</span> p[T][M];<br><span class="hljs-type">int</span> m, t, n;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d %d&quot;</span>, &amp;m, &amp;t, &amp;n) &amp;&amp; m+t+n)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=m; ++j)<br>                <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lf&quot;</span>, &amp;p[i][j]);<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>        &#123;<br>            dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>-p[i][<span class="hljs-number">1</span>];<br>            dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=p[i][<span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">2</span>; j&lt;=m; ++j)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=<span class="hljs-number">0</span>; k&lt;=j; ++k)<br>                &#123;<br>                    <span class="hljs-keyword">if</span>(k==<span class="hljs-number">0</span>) dp[i][j][k]=dp[i][j<span class="hljs-number">-1</span>][k]*(<span class="hljs-number">1</span>-p[i][j]);<br>                    <span class="hljs-keyword">else</span> dp[i][j][k]=dp[i][j<span class="hljs-number">-1</span>][k]*(<span class="hljs-number">1.0</span>-p[i][j])+dp[i][j<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>]*p[i][j];<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">double</span> ans1=<span class="hljs-number">1.0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>            ans1*=(<span class="hljs-number">1</span>-dp[i][m][<span class="hljs-number">0</span>]);<br>        <span class="hljs-type">double</span> ans2=<span class="hljs-number">1.0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>        &#123;<br>            <span class="hljs-type">double</span> tmp=<span class="hljs-number">0.0</span>;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=n<span class="hljs-number">-1</span>; ++j)<br>                tmp+=dp[i][m][j];<br>            ans2*=tmp;<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.3lf\n&quot;</span>, ans1-ans2);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>概率与期望</tag>
+      
+      <tag>动态规划</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SGU495</title>
     <link href="/2024/03/28/SGU495/"/>
     <url>/2024/03/28/SGU495/</url>
