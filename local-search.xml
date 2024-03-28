@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>P8743</title>
+    <link href="/2024/03/28/P8743/"/>
+    <url>/2024/03/28/P8743/</url>
+    
+    <content type="html"><![CDATA[<h3 id="P8743"><a href="#P8743" class="headerlink" title="P8743"></a>P8743</h3><p>题意：A和B初始各有为0的数a和b，给定数组x，A先B后依次用自己的数异或数组x中的一个数，异或完删除该数，均采取最优策略，问最后谁的数大<br>分析：a==b时有a^b==0，则数组x异或和为0。贪心地想，由于0异或无影响，故从最高位去比较1的个数，由于偶数可以分解成两个奇偶相同的数，故无影响；考虑奇数，若为1，则A大；若大于1，由于B可以通过选0使得双方手中的1奇偶反转，故需考虑0：当0为偶数时，无影响，当0为奇数时，B可以选偶数个0从而在该位获得奇数个1，故B大。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">2e5</span>+<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> x[N];<br><span class="hljs-type">int</span> n;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>    <span class="hljs-type">int</span> tmp=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; ++i) <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, x+i), tmp^=x[i];<br>    <span class="hljs-keyword">if</span>(tmp==<span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0\n&quot;</span>);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">20</span>; i&gt;=<span class="hljs-number">0</span>; --i)<br>    &#123;<br>        <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> bas=(<span class="hljs-number">1</span>&lt;&lt;i);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; ++i)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(bas&amp;x[i]) ++cnt;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(cnt&amp;<span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;1\n&quot;</span>);<br>            <span class="hljs-keyword">else</span><br>            &#123;<br>                <span class="hljs-keyword">if</span>((n-cnt)&amp;<span class="hljs-number">1</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;-1\n&quot;</span>);<br>                <span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;1\n&quot;</span>);<br>            &#125;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0\n&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;t);<br>    <span class="hljs-keyword">while</span>(t--) <span class="hljs-built_in">solve</span>();<br>&#125;<br></code></pre></td></tr></table></figure></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法，异或，博弈论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JavaScript</title>
     <link href="/2024/03/24/JavaScript/"/>
     <url>/2024/03/24/JavaScript/</url>
