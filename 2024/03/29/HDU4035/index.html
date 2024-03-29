@@ -16,15 +16,15 @@
   <meta name="author" content="Sp1ke">
   <meta name="keywords" content="">
   
-    <meta name="description" content="POJ2151题意：T个问题，M个队，已知每个队做出每个问题的概率，求所有人都至少做出一道且有人做出至少n道的概率分析：由容斥原理，P(所有人都至少做出一道且有人做出至少n道)&#x3D;P(所有人都至少做出一道)-P(所有人都没做超过n道)通过DP记录每个队做出几道题的概率，然后利用容斥原理计算列举维度：第几个队伍，第几个题，做出了几道列举决策：第j题没做出来 做出来了DP方程：dp[i][j][k]&#x3D;d">
+    <meta name="description" content="HDU4336题意：给定一棵树，从结点1出发，每个结点有三种决策：死亡回到1、逃离结束、前往下一个结点（可以是父节点或子节点），给定每个结点死亡和逃离的概率，前往下一个结点的概率相等。求从1出发到逃离走过路径的期望，若不可能逃离输出”impossible”分析：列出维度：所在结点位置，走过的路径列出决策：死亡回到1、逃离结束、前往下一个结点状态：dp[i]表示在i结点距结束走过路径的期望状态转移方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ2151">
-<meta property="og:url" content="http://www.sp1ke.xyz/2024/03/28/POJ2151/index.html">
+<meta property="og:title" content="HDU4035">
+<meta property="og:url" content="http://www.sp1ke.xyz/2024/03/29/HDU4035/index.html">
 <meta property="og:site_name" content="Sp1ke&#39;s blog">
-<meta property="og:description" content="POJ2151题意：T个问题，M个队，已知每个队做出每个问题的概率，求所有人都至少做出一道且有人做出至少n道的概率分析：由容斥原理，P(所有人都至少做出一道且有人做出至少n道)&#x3D;P(所有人都至少做出一道)-P(所有人都没做超过n道)通过DP记录每个队做出几道题的概率，然后利用容斥原理计算列举维度：第几个队伍，第几个题，做出了几道列举决策：第j题没做出来 做出来了DP方程：dp[i][j][k]&#x3D;d">
+<meta property="og:description" content="HDU4336题意：给定一棵树，从结点1出发，每个结点有三种决策：死亡回到1、逃离结束、前往下一个结点（可以是父节点或子节点），给定每个结点死亡和逃离的概率，前往下一个结点的概率相等。求从1出发到逃离走过路径的期望，若不可能逃离输出”impossible”分析：列出维度：所在结点位置，走过的路径列出决策：死亡回到1、逃离结束、前往下一个结点状态：dp[i]表示在i结点距结束走过路径的期望状态转移方">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-28T08:44:27.919Z">
-<meta property="article:modified_time" content="2024-03-28T08:49:15.867Z">
+<meta property="article:published_time" content="2024-03-29T05:41:53.014Z">
+<meta property="article:modified_time" content="2024-03-29T06:39:56.791Z">
 <meta property="article:author" content="Sp1ke">
 <meta property="article:tag" content="概率与期望">
 <meta property="article:tag" content="动态规划">
@@ -32,7 +32,7 @@
   
   
   
-  <title>POJ2151 - Sp1ke&#39;s blog</title>
+  <title>HDU4035 - Sp1ke&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="POJ2151"></span>
+            <span id="subtitle" data-typed-text="HDU4035"></span>
           
         </div>
 
@@ -221,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-28 16:44" pubdate>
-          2024年3月28日 下午
+        <time datetime="2024-03-29 13:41" pubdate>
+          2024年3月29日 下午
         </time>
       </span>
     
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          383 字
+          893 字
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          4 分钟
+          8 分钟
         
       </span>
     
@@ -281,12 +281,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">POJ2151</h1>
+            <h1 id="seo-header">HDU4035</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="POJ2151"><a href="#POJ2151" class="headerlink" title="POJ2151"></a>POJ2151</h3><p>题意：T个问题，M个队，已知每个队做出每个问题的概率，求所有人都至少做出一道且有人做出至少n道的概率<br>分析：<br>由容斥原理，P(所有人都至少做出一道且有人做出至少n道)=P(所有人都至少做出一道)-P(所有人都没做超过n道)<br>通过DP记录每个队做出几道题的概率，然后利用容斥原理计算<br>列举维度：第几个队伍，第几个题，做出了几道<br>列举决策：第j题没做出来 做出来了<br>DP方程：dp[i][j][k]=dp[i][j-1][k]*(1-p[i][j])+dp[i][j-1][k-1]*p[i][j]<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> M=<span class="hljs-number">35</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> T=<span class="hljs-number">1e3</span>+<span class="hljs-number">5</span>;<br><span class="hljs-type">double</span> dp[T][M][M];<br><span class="hljs-type">double</span> p[T][M];<br><span class="hljs-type">int</span> m, t, n;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d %d&quot;</span>, &amp;m, &amp;t, &amp;n) &amp;&amp; m+t+n)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=m; ++j)<br>                <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lf&quot;</span>, &amp;p[i][j]);<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>        &#123;<br>            dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>-p[i][<span class="hljs-number">1</span>];<br>            dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=p[i][<span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">2</span>; j&lt;=m; ++j)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=<span class="hljs-number">0</span>; k&lt;=j; ++k)<br>                &#123;<br>                    <span class="hljs-keyword">if</span>(k==<span class="hljs-number">0</span>) dp[i][j][k]=dp[i][j<span class="hljs-number">-1</span>][k]*(<span class="hljs-number">1</span>-p[i][j]);<br>                    <span class="hljs-keyword">else</span> dp[i][j][k]=dp[i][j<span class="hljs-number">-1</span>][k]*(<span class="hljs-number">1.0</span>-p[i][j])+dp[i][j<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>]*p[i][j];<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">double</span> ans1=<span class="hljs-number">1.0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>            ans1*=(<span class="hljs-number">1</span>-dp[i][m][<span class="hljs-number">0</span>]);<br>        <span class="hljs-type">double</span> ans2=<span class="hljs-number">1.0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=t; ++i)<br>        &#123;<br>            <span class="hljs-type">double</span> tmp=<span class="hljs-number">0.0</span>;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=n<span class="hljs-number">-1</span>; ++j)<br>                tmp+=dp[i][m][j];<br>            ans2*=tmp;<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.3lf\n&quot;</span>, ans1-ans2);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+                <h3 id="HDU4336"><a href="#HDU4336" class="headerlink" title="HDU4336"></a>HDU4336</h3><p>题意：给定一棵树，从结点1出发，每个结点有三种决策：死亡回到1、逃离结束、前往下一个结点（可以是父节点或子节点），给定每个结点死亡和逃离的概率，前往下一个结点的概率相等。求从1出发到逃离走过路径的期望，若不可能逃离输出”impossible”<br>分析：<br>列出维度：所在结点位置，走过的路径<br>列出决策：死亡回到1、逃离结束、前往下一个结点<br>状态：dp[i]表示在i结点距结束走过路径的期望<br>状态转移方程：<br>叶子结点：dp[u]=k[u]*dp[1] + e[u]*0 + (1-k[u]-e[u])*(dp[fa[u]]+1)<br>中间结点：dp[u]=k[u]*dp[1] + e[u]*0 + (1-k[u]-e[u])/sz*(dp[fa[u]]+1+sum(dp[v]+1))<br>提取未知量 dp[1] 和 dp[fa[u]]，设以下线性方程：<br>dp[u]=A[u]*dp[1] + B[u]*dp[fa[u]] + C[u]<br>sum(dp[v])=sum(A[v]*dp[1] + B[v]*dp[u] + C[v])<br>代入中间结点状态转移方程：<br>dp[u]=k[u]*dp[1] + (1-k[u]-e[u])/sz*(dp[fa[u]]<br>+sum(A[v]*dp[1] + B[v]*dp[u] + C[v])) + (1-k[u]-e[u])<br>=(k[u]+(1-k[u]-e[u])/sz*sum(A[v]))*dp[1]<br>+(1-k[u]-e[u])/sz*dp[fa[u]]<br>+(1-k[u]-e[u])/sz*sum(B[v])*dp[u]<br>+(1-k[u]-e[u])/sz*sum(C[v]) + (1-k[u]-e[u])<br>移项，合并同类项得<br>(1-(1-k[u]-e[u])/sz*sum(B[v]))*dp[i]=<br>(k[u]+(1-k[u]-e[u])/sz*sum(A[v]))*dp[1]<br>+(1-k[u]-e[u])/sz*dp[fa[u]]<br>+(1-k[u]-e[u])*(sum(C[v])/sz+1)<br>将上式与假设的线性方程对比，得中间量状态转移方程<br>令TMP=(1-(1-k[u]-e[u])/sz*sum(B[v]))<br>A[u]=(k[u]+(1-k[u]-e[u])/sz*sum(A[v]))/TMP<br>B[u]=(1-k[u]-e[u])/sz/TMP<br>C[u]=(1-k[u]-e[u])*(sum(C[v])/sz+1)/TMP<br>DFS后序遍历树，从叶子节点逆序递推求出根节点A[1]，B[1]，C[1]，根节点有 dp[1]=A[1]*dp[1]+C[1]，则dp[1]=C[1]/(1-A[1])，显然，若A[1]接近于1，则无解<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">1e4</span>+<span class="hljs-number">5</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> eps=<span class="hljs-number">1e-10</span>;<br><span class="hljs-type">int</span> n, cas;<br><span class="hljs-type">double</span> k[N], e[N];<br><span class="hljs-comment">//edge</span><br><span class="hljs-type">int</span> head[N], tot;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Edge</span>&#123;<br>    <span class="hljs-type">int</span> v, nex;<br>&#125;ed[N&lt;&lt;<span class="hljs-number">1</span>];<br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> u, <span class="hljs-type">int</span> v)</span></span><br><span class="hljs-function"></span>&#123;<br>    ed[++tot]=Edge&#123;v, head[u]&#125;;<br>    head[u]=tot;<br>&#125;<br><span class="hljs-comment">//dfs</span><br><span class="hljs-type">double</span> a[N], b[N], c[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> u, <span class="hljs-type">int</span> fa)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> sz=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span>(a[u]!=<span class="hljs-number">0.0</span>)<br>        <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=head[u]; i; i=ed[i].nex)<br>    &#123;<br>        <span class="hljs-type">int</span> v=ed[i].v;<br>        ++sz;<br>        <span class="hljs-keyword">if</span>(v==fa) <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-built_in">dfs</span>(v, u);<br>    &#125;<br>    <span class="hljs-keyword">if</span>(sz==<span class="hljs-number">1</span> &amp;&amp; u!=<span class="hljs-number">1</span>)<br>    &#123;<br>        a[u]=k[u];<br>        b[u]=c[u]=<span class="hljs-number">1</span>-k[u]-e[u];<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-type">double</span> tmpa=<span class="hljs-number">0.0</span>, tmpb=<span class="hljs-number">0.0</span>, tmpc=<span class="hljs-number">0.0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=head[u]; i; i=ed[i].nex)<br>    &#123;<br>        <span class="hljs-type">int</span> v=ed[i].v;<br>        <span class="hljs-keyword">if</span>(v==fa) <span class="hljs-keyword">continue</span>;<br>        tmpa+=a[v];<br>        tmpb+=b[v];<br>        tmpc+=c[v];<br>    &#125;<br>    <span class="hljs-type">double</span> tmp=<span class="hljs-number">1.0</span>-(<span class="hljs-number">1.0</span>-k[u]-e[u])/sz*tmpb;<br>    <span class="hljs-comment">//printf(&quot;%lf %lf %lf %lf %d\n&quot;, tmpa, tmpb, tmpc, tmp, sz);</span><br>    a[u]=(k[u]+(<span class="hljs-number">1.0</span>-k[u]-e[u])/sz*tmpa)/tmp;<br>    b[u]=(<span class="hljs-number">1.0</span>-k[u]-e[u])/sz/tmp;<br>    c[u]=(<span class="hljs-number">1.0</span>-k[u]-e[u])*(tmpc/sz+<span class="hljs-number">1</span>)/tmp;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    tot=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">memset</span>(head, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(head));<br>    <span class="hljs-built_in">memset</span>(a, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(a));<br>    <span class="hljs-built_in">memset</span>(b, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(b));<br>    <span class="hljs-built_in">memset</span>(c, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(c));<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>; i&lt;=n; ++i)<br>    &#123;<br>        <span class="hljs-type">int</span> x, y;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;x, &amp;y);<br>        <span class="hljs-built_in">add</span>(x, y);<br>        <span class="hljs-built_in">add</span>(y, x);<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; ++i)<br>    &#123;<br>        <span class="hljs-type">double</span> x, y;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lf %lf&quot;</span>, &amp;x, &amp;y);<br>        k[i]=x/<span class="hljs-number">100.0</span>;<br>        e[i]=y/<span class="hljs-number">100.0</span>;<br>    &#125;<br>    <span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>    <span class="hljs-comment">//printf(&quot;a1=%lf\n&quot;, a[1]);</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Case %d: &quot;</span>, ++cas);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(<span class="hljs-number">1.0</span>-a[<span class="hljs-number">1</span>])&lt;=eps)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;impossible\n&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-type">double</span> ans=c[<span class="hljs-number">1</span>]/(<span class="hljs-number">1.0</span>-a[<span class="hljs-number">1</span>]);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.6lf\n&quot;</span>, ans);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;t);<br>    <span class="hljs-keyword">while</span>(t--) <span class="hljs-built_in">solve</span>();<br>&#125; <br></code></pre></td></tr></table></figure></p>
 
                 
               </div>
@@ -334,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>POJ2151</div>
-      <div>http://www.sp1ke.xyz/2024/03/28/POJ2151/</div>
+      <div>HDU4035</div>
+      <div>http://www.sp1ke.xyz/2024/03/29/HDU4035/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月28日</div>
+          <div>2024年3月29日</div>
         </div>
       
       
@@ -379,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/29/HDU4336/" title="HDU4336">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HDU4336</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/28/SGU495/" title="SGU495">
-                        <span class="hidden-mobile">SGU495</span>
+                      <a href="/2024/03/29/HDU4336/" title="HDU4336">
+                        <span class="hidden-mobile">HDU4336</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
