@@ -16,15 +16,15 @@
   <meta name="author" content="Sp1ke">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基础模拟实现计算时间复杂度判断可行性，按题意写   注意列出所有条件与操作   应用时间复杂度可行   排序实现STL中sort是快排O(nlogn)；归并稳定O(nlogn)   思想分治   应用比较相邻或逆序对用归并，无序数组排序用快排   二分实现二分验证答案，不断逼近最值   思想答案有界且单调   应用大规模枚举，最小值最大化，最优解问题   代码int l&#x3D;minn, r&#x3D;maxn,">
+    <meta name="description" content="基础模拟实现计算时间复杂度判断可行性，按题意写   注意列出所有条件与操作   应用时间复杂度可行   排序实现STL中sort是快排O(nlogn)；归并稳定O(nlogn)   思想分治   应用比较相邻或逆序对用归并，无序数组排序用快排   二分实现二分验证答案，不断逼近最值   思想答案有界且单调   应用大规模枚举，最小值最大化，最优解问题   代码&#96;&#96;&#96;cppint l&#x3D;minn, r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础">
 <meta property="og:url" content="http://www.sp1ke.xyz/2024/04/09/acm1/index.html">
 <meta property="og:site_name" content="Sp1ke&#39;s blog">
-<meta property="og:description" content="基础模拟实现计算时间复杂度判断可行性，按题意写   注意列出所有条件与操作   应用时间复杂度可行   排序实现STL中sort是快排O(nlogn)；归并稳定O(nlogn)   思想分治   应用比较相邻或逆序对用归并，无序数组排序用快排   二分实现二分验证答案，不断逼近最值   思想答案有界且单调   应用大规模枚举，最小值最大化，最优解问题   代码int l&#x3D;minn, r&#x3D;maxn,">
+<meta property="og:description" content="基础模拟实现计算时间复杂度判断可行性，按题意写   注意列出所有条件与操作   应用时间复杂度可行   排序实现STL中sort是快排O(nlogn)；归并稳定O(nlogn)   思想分治   应用比较相邻或逆序对用归并，无序数组排序用快排   二分实现二分验证答案，不断逼近最值   思想答案有界且单调   应用大规模枚举，最小值最大化，最优解问题   代码&#96;&#96;&#96;cppint l&#x3D;minn, r">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-09T11:27:39.831Z">
-<meta property="article:modified_time" content="2024-04-09T11:29:13.022Z">
+<meta property="article:modified_time" content="2024-04-09T12:13:43.151Z">
 <meta property="article:author" content="Sp1ke">
 <meta property="article:tag" content="前缀和">
 <meta property="article:tag" content="基础">
@@ -353,7 +353,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          825 字
+          823 字
         
       </span>
     
@@ -415,14 +415,7 @@ mjx-container[display="true"] + br {
 <h2 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h2><h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><p>二分验证答案，不断逼近最值  </p>
 <h4 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h4><p>答案有界且单调  </p>
 <h4 id="应用-2"><a href="#应用-2" class="headerlink" title="应用"></a>应用</h4><p>大规模枚举，最小值最大化，最优解问题  </p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">int l=minn, r=maxn, mid, ans;
-while(l&lt;=r)
-{
-    mid=(l+r)&gt;&gt;1;
-    if(check(mid)) ans=mid, l=mid+1;
-    else r=mid-1;
-}
-</code></pre>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>```cpp<br>int l=minn, r=maxn, mid, ans;<br>while(l&lt;=r)<br>{<br>    mid=(l+r)&gt;&gt;1;<br>    if(check(mid)) ans=mid, l=mid+1;<br>    else r=mid-1;<br>}</p>
 <h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h2><h4 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h4><p>分别求解，合并答案  </p>
 <h4 id="思想-2"><a href="#思想-2" class="headerlink" title="思想"></a>思想</h4><p>大问题分解成小问题  </p>
 <h4 id="应用-3"><a href="#应用-3" class="headerlink" title="应用"></a>应用</h4><p>问题具有最优子结构，一定的规律性  </p>
@@ -433,22 +426,8 @@ while(l&lt;=r)
 <h2 id="高精度"><a href="#高精度" class="headerlink" title="高精度"></a>高精度</h2><h4 id="实现-5"><a href="#实现-5" class="headerlink" title="实现"></a>实现</h4><p>压位高精度</p>
 <h4 id="思想-4"><a href="#思想-4" class="headerlink" title="思想"></a>思想</h4><p>模拟加减乘除运算  </p>
 <h4 id="应用-5"><a href="#应用-5" class="headerlink" title="应用"></a>应用</h4><p>数据极大  </p>
-<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">struct bign{
-    int len, s[N];
-    bign(){memset(s,0,sizeof(s)); len = 1; }
-    bign(int num){*this=num;};
-    bign(char *num){*this = num;}
-    bign operator=(int num)
-    {
-        char c[N];
-        sprintf(c, "%d", num);
-        *this = c;
-        return *this;
-    }
-    bign operator=(const char *num)
-    {
-        len = strlen(num);
-        for(int i=0; i&lt;len; i++)
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><p>```cpp<br>struct bign{<br>    int len, s[N];<br>    bign(){memset(s,0,sizeof(s)); len = 1; }<br>    bign(int num){<em>this=num;};<br>    bign(char </em>num){<em>this = num;}<br>    bign operator=(int num)<br>    {<br>        char c[N];<br>        sprintf(c, “%d”, num);
+        </em>this = c;<br>        return <em>this;<br>    }<br>    bign operator=(const char </em>num)<br>    {<br>        len = strlen(num);<br>        for(int i=0; i&lt;len; i++)
             s[i]=num[len-1-i]-'0';
         return *this;
     }
@@ -460,14 +439,7 @@ while(l&lt;=r)
     }
     void clean()//清除前缀0
     {
-        while(len &gt; 1 &amp;&amp; !s[len - 1])len--;
-    }
-    bign operator+(const bign &amp;b)
-    {
-        bign c;
-        c.len = 0;
-        int x;
-        for(int i = 0, g = 0; g||i&lt;len||i&lt;b.len;i++)
+        while(len &gt; 1 &amp;&amp; !s[len - 1])len—;<br>    }<br>    bign operator+(const bign &amp;b)<br>    {<br>        bign c;<br>        c.len = 0;<br>        int x;<br>        for(int i = 0, g = 0; g||i&lt;len||i&lt;b.len;i++)
         {
             x = g;
             if(i &lt; len) x+=s[i];
@@ -486,91 +458,46 @@ while(l&lt;=r)
         {
             x=s[i]-g;
             if(i &lt; b.len)   x-=b.s[i];
-            if(x&gt;=0)    g=0;
-            else{
-                x+=10;
-                g=1;
-            }
-            c.s[c.len++]=x;
-        }
-        c.clean();
-        return c;
-    }
-    bign operator*(const bign &amp;b)
+            if(x&gt;=0)    g=0;<br>            else{<br>                x+=10;<br>                g=1;<br>            }<br>            c.s[c.len++]=x;<br>        }<br>        c.clean();<br>        return c;<br>    }<br>    bign operator<em>(const bign &amp;b)<br>    {<br>        bign c;<br>        c.len = len + b.len;<br>        for(int i=0; i &lt; len; i++)<br>            for(int j = 0; j &lt; b.len; j++)<br>                c.s[i + j]+=s[i]</em>b.s[j];<br>        for(int i=0; i&lt;c.len-1; i++)<br>        {<br>            c.s[i+1]+=c.s[i]/10;<br>            c.s[i]%=10;<br>        }<br>        c.clean();<br>        return c;<br>    }</p>
+<pre><code class="hljs">bool greater_eq(const bign &amp;a, const bign &amp;b, int last_dg, int len)
+{
+    if(a.s[last_dg+len]!=0) return 1;
+    for(int i = len - 1; i&gt;=0;i--)
     {
-        bign c;
-        c.len = len + b.len;
-        for(int i=0; i &lt; len; i++)
+        if(a.s[last_dg + i] &gt; b.s[i]) return 1;
+        if(a.s[last_dg + i] &lt; b.s[i]) return 0;
+    }
+    return 1;
+}
+bign operator/(const bign &amp;b)
+{
+    bign c;
+    if(s[len - 1] == 0 ||b.len == 1 &amp;&amp; b.s[b.len - 1] == 0)   return c;
+    c.len = len - b.len + 1;
+    for(int i = len - b.len; i &gt;= 0; i--)
+    {
+        while(greater_eq(*this, b, i, b.len))
+        {
             for(int j = 0; j &lt; b.len; j++)
-                c.s[i + j]+=s[i]*b.s[j];
-        for(int i=0; i&lt;c.len-1; i++)
-        {
-            c.s[i+1]+=c.s[i]/10;
-            c.s[i]%=10;
-        }
-        c.clean();
-        return c;
-    }
-
-    bool greater_eq(const bign &amp;a, const bign &amp;b, int last_dg, int len)
-    {
-        if(a.s[last_dg+len]!=0) return 1;
-        for(int i = len - 1; i&gt;=0;i--)
-        {
-            if(a.s[last_dg + i] &gt; b.s[i]) return 1;
-            if(a.s[last_dg + i] &lt; b.s[i]) return 0;
-        }
-        return 1;
-    }
-    bign operator/(const bign &amp;b)
-    {
-        bign c;
-        if(s[len - 1] == 0 ||b.len == 1 &amp;&amp; b.s[b.len - 1] == 0)   return c;
-        c.len = len - b.len + 1;
-        for(int i = len - b.len; i &gt;= 0; i--)
-        {
-            while(greater_eq(*this, b, i, b.len))
             {
-                for(int j = 0; j &lt; b.len; j++)
+                s[i + j] -= b.s[j];
+                if(s[i + j] &lt; 0)
                 {
-                    s[i + j] -= b.s[j];
-                    if(s[i + j] &lt; 0)
-                    {
-                        s[i + j + 1] -= 1;
-                        s[i + j] += 10;
-                    }
+                    s[i + j + 1] -= 1;
+                    s[i + j] += 10;
                 }
-                c.s[i] += 1;
             }
+            c.s[i] += 1;
         }
-        c.clean();
-        return c;
     }
-};
-istream&amp; operator&gt;&gt;(istream &amp;in, bign &amp;x)
-{
-    string s;
-    in&gt;&gt;s;
-    x=s.c_str();
-    return in;
+    c.clean();
+    return c;
 }
-ostream&amp; operator&lt;&lt;(ostream &amp;out, bign &amp;x)
-{
-    out&lt;&lt;x.str();
-    return out;
-}
-</code></pre>
+</code></pre><p>};<br>istream&amp; operator&gt;&gt;(istream &amp;in, bign &amp;x)<br>{<br>    string s;<br>    in&gt;&gt;s;<br>    x=s.c_str();<br>    return in;<br>}<br>ostream&amp; operator&lt;&lt;(ostream &amp;out, bign &amp;x)<br>{<br>    out&lt;&lt;x.str();<br>    return out;<br>}</p>
 <h2 id="前缀和-amp-差分"><a href="#前缀和-amp-差分" class="headerlink" title="前缀和&差分"></a>前缀和&amp;差分</h2><h4 id="实现-6"><a href="#实现-6" class="headerlink" title="实现"></a>实现</h4><p>一维，二维  </p>
 <h4 id="思想-5"><a href="#思想-5" class="headerlink" title="思想"></a>思想</h4><p>预处理  </p>
 <h4 id="应用-6"><a href="#应用-6" class="headerlink" title="应用"></a>应用</h4><p>区间查询用前缀和，区间修改单点查询用差分  </p>
-<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">//二维前缀和
-f[i][j]=a[i][j]+f[i-1][j]+f[i][j-1]-f[i-1][j-1]
-[x1, x2][y1, y2]=f[x2][y2]-f[x1][y2]-f[x2][y1]+f[x1][x2]  
-//二维差分
-d[i][j]=a[i][j]-a[i-1][j]-a[i][j-1]+a[i-1][j-1][j-1]
-a[i][j]=sum(d[i][j]+d[i-1][j]+d[i][j-1]-d[i-1][j-1])
-d[x1][y1]+=c, d[x1][y2+1]-=c, d[x2+1][y1]-=c, d[x2+1][y2+1]+=c
-</code></pre>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><p>```cpp<br>//二维前缀和<br>f[i][j]=a[i][j]+f[i-1][j]+f[i][j-1]-f[i-1][j-1]<br>[x1, x2][y1, y2]=f[x2][y2]-f[x1][y2]-f[x2][y1]+f[x1][x2]<br>//二维差分<br>d[i][j]=a[i][j]-a[i-1][j]-a[i][j-1]+a[i-1][j-1][j-1]<br>a[i][j]=sum(d[i][j]+d[i-1][j]+d[i][j-1]-d[i-1][j-1])<br>d[x1][y1]+=c, d[x1][y2+1]-=c, d[x2+1][y1]-=c, d[x2+1][y2+1]+=c  </p>
 
                 
               </div>

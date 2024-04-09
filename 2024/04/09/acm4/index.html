@@ -24,7 +24,7 @@
 <meta property="og:description" content="数据结构链表实现 数组实现链表（val[i]记录值，nex[i]记录下一个元素的位置）   STL list   增删 O(1)，改查 O(n)  优化设置墓碑 vis[i] 实现伪删除  应用在一个数列中高效插入、删除一个元素    栈实现 数组实现，设置栈顶指针   STL stack   增删  思想后进先出 FILO  应用处理后缀表达式、括号表达式，实现DFS、函数栈，结合KMP&#x2F;AC自">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-09T12:09:13.598Z">
-<meta property="article:modified_time" content="2024-04-09T12:11:00.575Z">
+<meta property="article:modified_time" content="2024-04-09T12:13:43.151Z">
 <meta property="article:author" content="Sp1ke">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="链表">
@@ -428,30 +428,13 @@ mjx-container[display="true"] + br {
 </ul>
 <h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><h4 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h4><ul>
 <li>插入，查询栈顶最值。</li>
-<li><strong>一般记录下标</strong>  <h4 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h4>维护单调性的前提下弹出最少的元素  <h4 id="应用-3"><a href="#应用-3" class="headerlink" title="应用"></a>应用</h4>记录区间最值，离线解决RMQ问题 O(qlogn+qlogq)，正反向两次单调栈实现寻找首个大于/小于某个数的位置  <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">int stk[N], top;//stk[i]记录下标
-//插入val[i]
-while(top&gt;0 &amp;&amp; val[stk[top]]&lt;x) --top;//弹出栈顶比当前数小的维护单调性
-stk[++top]=i;
-//查询栈顶最值
-stk[top];
-</code></pre>
-</li>
+<li><strong>一般记录下标</strong>  <h4 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h4>维护单调性的前提下弹出最少的元素  <h4 id="应用-3"><a href="#应用-3" class="headerlink" title="应用"></a>应用</h4>记录区间最值，离线解决RMQ问题 O(qlogn+qlogq)，正反向两次单调栈实现寻找首个大于/小于某个数的位置  <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4>```cpp<br>int stk[N], top;//stk[i]记录下标<br>//插入val[i]<br>while(top&gt;0 &amp;&amp; val[stk[top]]&lt;x) —top;//弹出栈顶比当前数小的维护单调性<br>stk[++top]=i;<br>//查询栈顶最值<br>stk[top];</li>
 </ul>
 <h2 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h2><h4 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h4><ul>
 <li>只能队尾插入，支持双端删除，查询队首最值  </li>
 <li>删除队首直接出队而删除队尾结合插入完成  </li>
 <li>插入不满足单调性删除队尾直到满足单调性再执行队尾插入  </li>
-<li><strong>存储下标</strong>  <h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4>保序性（与原序列同序），保证单调性  <h4 id="应用-4"><a href="#应用-4" class="headerlink" title="应用"></a>应用</h4>实现滑动窗口RMQ O(n)  <h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">int q[N];//存储下标
-int head=0, tail=-1;//初始化队首队尾
-//队尾插入并通过删除维护单调性
-while(head&lt;=tail &amp;&amp; val[q[tail]]&lt;=a[i]) --tail;
-q[++tail]=i;
-//队首最值
-q[head];
-//弹出队首保证区间范围正确
-while(q[head]&lt;=i-len) ++head;
-</code></pre>
-</li>
+<li><strong>存储下标</strong>  <h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4>保序性（与原序列同序），保证单调性  <h4 id="应用-4"><a href="#应用-4" class="headerlink" title="应用"></a>应用</h4>实现滑动窗口RMQ O(n)  <h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4>```cpp<br>int q[N];//存储下标<br>int head=0, tail=-1;//初始化队首队尾<br>//队尾插入并通过删除维护单调性<br>while(head&lt;=tail &amp;&amp; val[q[tail]]&lt;=a[i]) —tail;<br>q[++tail]=i;<br>//队首最值<br>q[head];<br>//弹出队首保证区间范围正确<br>while(q[head]&lt;=i-len) ++head;</li>
 </ul>
 <h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><h4 id="实现-5"><a href="#实现-5" class="headerlink" title="实现"></a>实现</h4><p>哈希函数（单哈希、双哈希）  </p>
 <h4 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h4><p>拉链法、闭散列法  </p>
@@ -461,16 +444,7 @@ while(q[head]&lt;=i-len) ++head;
 <li>初始化：父亲为自身  </li>
 <li>查询：沿着父节点直至找到根节点。路径压缩优化  </li>
 <li>合并：将一棵树的根节点连接到另一棵树的根节点。启发式合并  </li>
-<li>删除：删除叶子节点，将父亲设为自己。一般不删除，可以逆向建图  <h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4>种类/带权/扩展域并查集，开多倍空间或维护边权（向量加减法、取模）实现  <h4 id="应用-6"><a href="#应用-6" class="headerlink" title="应用"></a>应用</h4>维护连通块的合并和查询问题，最小生成树的Kruskal，最近公共祖先的Tarjan  <h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">int fa[N], sz[N];//父节点、节点子树大小
-//初始化
-void dsu(int n) {for(int i=1; i&lt;=n; ++i) fa[i]=i, sz[i]=1;}
-//查询
-int find(int x) {return x==fa[x] ? x : fa[x]=find(fa[x]);}//路径压缩
-//合并
-bool merge(int x, int y){
-  int fx=find(X), fy=find(y);
-  if(fx=fy) return false;
-  if(sz[fx]&lt;sz[fy]) swap(fx,fy);//按节点数启发式合并
+<li>删除：删除叶子节点，将父亲设为自己。一般不删除，可以逆向建图  <h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4>种类/带权/扩展域并查集，开多倍空间或维护边权（向量加减法、取模）实现  <h4 id="应用-6"><a href="#应用-6" class="headerlink" title="应用"></a>应用</h4>维护连通块的合并和查询问题，最小生成树的Kruskal，最近公共祖先的Tarjan  <h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4>```cpp<br>int fa[N], sz[N];//父节点、节点子树大小<br>//初始化<br>void dsu(int n) {for(int i=1; i&lt;=n; ++i) fa[i]=i, sz[i]=1;}<br>//查询<br>int find(int x) {return x==fa[x] ? x : fa[x]=find(fa[x]);}//路径压缩<br>//合并<br>bool merge(int x, int y){<br>  int fx=find(X), fy=find(y);<br>  if(fx=fy) return false;<br>  if(sz[fx]&lt;sz[fy]) swap(fx,fy);//按节点数启发式合并
   fa[fy]=fx;
   sz[fx]+=sz[fy];
 }
@@ -495,11 +469,7 @@ bool merge(int x, int y, int d){
   fa[fy]=fx;
   sz[fx]+=sz[fy];
   val[fy]=(val[x]-val[y]+d+3)%3;//向量减法，d表示y对x的关系，
-  //x-&gt;fx y-&gt;fy val[x]-val[y]表示fy对y的关系+x对fx的关系 合并后 fy-&gt;fx
-  //由于已知信息d是x对y的关系，故fy对fx的关系=fy对y的关系+y对x的关系+x对fx的关系=x对fx的关系-y对fy的关系+y对x的关系
-}
-</code></pre>
-</li>
+  //x-&gt;fx y-&gt;fy val[x]-val[y]表示fy对y的关系+x对fx的关系 合并后 fy-&gt;fx<br>  //由于已知信息d是x对y的关系，故fy对fx的关系=fy对y的关系+y对x的关系+x对fx的关系=x对fx的关系-y对fy的关系+y对x的关系<br>}</li>
 </ul>
 <h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h4 id="实现-7"><a href="#实现-7" class="headerlink" title="实现"></a>实现</h4><ul>
 <li>堆是一棵每个节点的键值都与其父亲满足单调性的树  </li>
@@ -515,26 +485,11 @@ bool merge(int x, int y, int d){
 <li>查询 O(1)  <h4 id="思想-2"><a href="#思想-2" class="headerlink" title="思想"></a>思想</h4></li>
 <li>f(i,j) 表示区间 [i, i+(1&lt;&lt;j)-1] 的最值  </li>
 <li>预处理DP方程： <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="42.694ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 18870.7 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(550,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(939,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1284,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(1728.7,0)"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g><g data-mml-node="mo" transform="translate(2140.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2807.4,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(3863.2,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(4741.2,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(5270.2,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(5842.2,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(6231.2,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(6781.2,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(7170.2,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(7515.2,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(7959.9,0)"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g><g data-mml-node="mo" transform="translate(8371.9,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(8760.9,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(9205.6,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(9755.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(10144.6,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(10711.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(11712,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(12101,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(12878.8,0)"><g data-mml-node="text"><path data-c="3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></g><g data-mml-node="text" transform="translate(778,0)"><path data-c="3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></g></g><g data-mml-node="mi" transform="translate(14712.6,0)"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g><g data-mml-node="mo" transform="translate(15346.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(16347,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(16847,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(17236,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(17680.7,0)"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g><g data-mml-node="mo" transform="translate(18092.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(18481.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>  </li>
-<li>查询：使用至多两个预处理过的区间来覆盖询问区间，允许区间重叠  <h4 id="应用-8"><a href="#应用-8" class="headerlink" title="应用"></a>应用</h4>解决可重复贡献问题（RMQ、区间GCD等区间询问x op y=z满足结合律的问题）  <h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">int f[N][32], lg[N];
-//预处理lg[i]表示log2(i)的向下取整值
-void init() {for(int i=2; i&lt;N; ++i) lg[i]=lg[i&gt;&gt;1]+1;}
-//预处理ST表，f[i][j]表示区间[i, i+(1&lt;&lt;j)-1]的最值，f[i][0]存储第i位的值 O(nlogn)
-void pre(int n){
-  for(int j=1; j&lt;=lg[n]; ++j){//表示区间长度为 1&lt;&lt;j
-      int len=(1&lt;&lt;j)-1;//区间长度-1
-      for(int i=1; i+len&lt;=n; ++i){
-          f[i][j]=max(f[i][j-1], f[i+(1&lt;&lt;j-1)][j-1]);//转移
-      }
+<li>查询：使用至多两个预处理过的区间来覆盖询问区间，允许区间重叠  <h4 id="应用-8"><a href="#应用-8" class="headerlink" title="应用"></a>应用</h4>解决可重复贡献问题（RMQ、区间GCD等区间询问x op y=z满足结合律的问题）  <h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4>```cpp<br>int f[N][32], lg[N];<br>//预处理lg[i]表示log2(i)的向下取整值<br>void init() {for(int i=2; i&lt;N; ++i) lg[i]=lg[i&gt;&gt;1]+1;}<br>//预处理ST表，f[i][j]表示区间[i, i+(1&lt;&lt;j)-1]的最值，f[i][0]存储第i位的值 O(nlogn)<br>void pre(int n){<br>  for(int j=1; j&lt;=lg[n]; ++j){//表示区间长度为 1&lt;&lt;j<pre><code class="hljs">  int len=(1&lt;&lt;j)-1;//区间长度-1
+  for(int i=1; i+len&lt;=n; ++i){
+      f[i][j]=max(f[i][j-1], f[i+(1&lt;&lt;j-1)][j-1]);//转移
   }
-}
-//区间查询可重复贡献问题 O(1)
-inline int query(int l, int r)
-{
-  int len=lg[r-l+1];
-  return max(f[l][len], f[r-(1&lt;&lt;len)+1][len]);//保证覆盖整个区间[l,r]
-}
-</code></pre>
-</li>
+</code></pre>  }<br>}<br>//区间查询可重复贡献问题 O(1)<br>inline int query(int l, int r)<br>{<br>  int len=lg[r-l+1];<br>  return max(f[l][len], f[r-(1&lt;&lt;len)+1][len]);//保证覆盖整个区间[l,r]<br>}</li>
 </ul>
 <h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><h4 id="实现-9"><a href="#实现-9" class="headerlink" title="实现"></a>实现</h4><ul>
 <li>基于二进制拆分区间  </li>
@@ -543,105 +498,21 @@ inline int query(int l, int r)
 <li>区间修改和区间查询（两个树状数组维护差分数组）  <h4 id="扩展："><a href="#扩展：" class="headerlink" title="扩展："></a>扩展：</h4></li>
 <li>二维树状数组（维护二维数组上的单点修改和前缀信息问题）  </li>
 <li>权值/值域树状数组（维护权值数组（序列a的权值数组tot[x]维护x在a中出现的次数），可能需要离散化），解决<strong>单点修改、查询全局第k小</strong>和<strong>全局逆序对</strong>问题  </li>
-<li>时间戳优化（时间戳标记，判断当前时间与数据时间戳是否相同）  <h4 id="应用-9"><a href="#应用-9" class="headerlink" title="应用"></a>应用</h4>维护满足结合律和可差分性运算的信息  <pre><code class="lang-cpp">int c[N];//原数组则为区间查询单点修改，差分数组则为单点查询区间修改
-//管辖区间
-inline int lowbit(int x) {return x&amp;-x;}
-//区间查询 [1, x]
-int query(int x){
-  int res=0;
-  for(x; x&gt;0; x-=lowbit(x)){
-      res+=c[x];
-  }
-}
-//单点修改
-void add(int x, int val){
-  for(x; x&lt;=n; x+=lowbit(x)){
-      c[x]+=val;
-  }
-}
-//区间加区间和 sum_1_to_r(a[i])=sum_1_to_r(sum_1_to_i(d[j]))=sum_1_to_r(d[i]*(r+1))-sum_1_to_r(d[i]*i)
-int d1[N], d2[N];//d[i]是差分数组，分别维护 d[i] 和 d[i]*i 的值
-//区间查询 [1, r]
-int query(int *d, int x){
-  int res=0;
-  for(x; x&gt;0; x-=lowbit(x)){
-      res+=d[x];
-  }
-  return res;
-}
-//区间查询[l,r]
-inline query1(int l, int r){
-  return (r+1)*query(d1, r)-l*query(d1, l-1)-(query(d2, r)-query(d2, l-1));
-}
-//区间修改
-void add(int x, int val){
-  int val1=x*val;
-  for(x; x&lt;=n; x+=lowbit(x)){
-      d1[x]+=val, d2[x]+=val1;
-  }
-}
-inline void add1(int l, int r, int val){
-  add(l, val), add(r+1, -val);//将区间加差分为两个前缀和
-}
-//二维树状数组
-//单点修改子矩阵查询
-int c[N][M];//单点修改存储原数组
-//查询从(1,1)开始的子矩阵和
-int sum(int x, int y) {
-int res = 0;
-for (int i = x; i &gt; 0; i -= lowbit(i)) {
-  for (int j = y; j &gt; 0; j -= lowbit(j)) {
-    res += c[i][j];
-  }
-}
-return res;
-}
-int ask(int x1, int y1, int x2, int y2) {
-return sum(x2, y2) - sum(x2, y1 - 1) - sum(x1 - 1, y2) + sum(x1 - 1, y1 - 1);
-}
-//单点查询
-void add(int x, int y, int v) {
-for (int i = x; i &lt;= n; i += lowbit(i)) {
-  for (int j = y; j &lt;= m; j += lowbit(j)) {
-    // 注意这里必须得建循环变量，不能像一维数组一样直接 while (x &lt;= n) 了
-    c[i][j] += v;
-  }
-}
-}
-//子矩阵修改子矩阵查询
-typedef long long ll;
-ll t1[N][N], t2[N][N], t3[N][N], t4[N][N];//维护差分数组，分别是d[i][j], d[i][j]*i, d[i][j]*j, d[i][j]*i*j
-//差分数组子矩阵加法
-void add(ll x, ll y, ll z) {
-for (int X = x; X &lt;= n; X += lowbit(X))
-  for (int Y = y; Y &lt;= m; Y += lowbit(Y)) {
-    t1[X][Y] += z;
-    t2[X][Y] += z * x;  // 注意是 z * x 而不是 z * X，后面同理
-    t3[X][Y] += z * y;
-    t4[X][Y] += z * x * y;
-  }
-}
-void range_add(ll xa, ll ya, ll xb, ll yb,
-             ll z) {  //(xa, ya) 到 (xb, yb) 子矩阵
-add(xa, ya, z);
-add(xa, yb + 1, -z);
-add(xb + 1, ya, -z);
-add(xb + 1, yb + 1, z);
-}
-//子矩阵查询
-ll ask(ll x, ll y) {
-ll res = 0;
-for (int i = x; i; i -= lowbit(i))
-  for (int j = y; j; j -= lowbit(j))
-    res += (x + 1) * (y + 1) * t1[i][j] - (y + 1) * t2[i][j] -
-           (x + 1) * t3[i][j] + t4[i][j];
-return res;
-}
-ll range_ask(ll xa, ll ya, ll xb, ll yb) {
-return ask(xb, yb) - ask(xb, ya - 1) - ask(xa - 1, yb) + ask(xa - 1, ya - 1);
-}
-</code></pre>
-</li>
+<li>时间戳优化（时间戳标记，判断当前时间与数据时间戳是否相同）  <h4 id="应用-9"><a href="#应用-9" class="headerlink" title="应用"></a>应用</h4>维护满足结合律和可差分性运算的信息<br>```cpp<br>int c[N];//原数组则为区间查询单点修改，差分数组则为单点查询区间修改<br>//管辖区间<br>inline int lowbit(int x) {return x&amp;-x;}<br>//区间查询 [1, x]<br>int query(int x){<br>  int res=0;<br>  for(x; x&gt;0; x-=lowbit(x)){<pre><code class="hljs">  res+=c[x];
+</code></pre>  }<br>}<br>//单点修改<br>void add(int x, int val){<br>  for(x; x&lt;=n; x+=lowbit(x)){<pre><code class="hljs">  c[x]+=val;
+</code></pre>  }<br>}<br>//区间加区间和 sum_1_to_r(a[i])=sum_1_to_r(sum_1_to_i(d[j]))=sum_1_to_r(d[i]<em>(r+1))-sum_1_to_r(d[i]</em>i)<br>int d1[N], d2[N];//d[i]是差分数组，分别维护 d[i] 和 d[i]<em>i 的值<br>//区间查询 [1, r]<br>int query(int </em>d, int x){<br>  int res=0;<br>  for(x; x&gt;0; x-=lowbit(x)){<pre><code class="hljs">  res+=d[x];
+</code></pre>  }<br>  return res;<br>}<br>//区间查询[l,r]<br>inline query1(int l, int r){<br>  return (r+1)<em>query(d1, r)-l</em>query(d1, l-1)-(query(d2, r)-query(d2, l-1));<br>}<br>//区间修改<br>void add(int x, int val){<br>  int val1=x*val;<br>  for(x; x&lt;=n; x+=lowbit(x)){<pre><code class="hljs">  d1[x]+=val, d2[x]+=val1;
+</code></pre>  }<br>}<br>inline void add1(int l, int r, int val){<br>  add(l, val), add(r+1, -val);//将区间加差分为两个前缀和<br>}<br>//二维树状数组<br>//单点修改子矩阵查询<br>int c[N][M];//单点修改存储原数组<br>//查询从(1,1)开始的子矩阵和<br>int sum(int x, int y) {<br>int res = 0;<br>for (int i = x; i &gt; 0; i -= lowbit(i)) {<br>  for (int j = y; j &gt; 0; j -= lowbit(j)) {<pre><code class="hljs">res += c[i][j];
+</code></pre>  }<br>}<br>return res;<br>}<br>int ask(int x1, int y1, int x2, int y2) {<br>return sum(x2, y2) - sum(x2, y1 - 1) - sum(x1 - 1, y2) + sum(x1 - 1, y1 - 1);<br>}<br>//单点查询<br>void add(int x, int y, int v) {<br>for (int i = x; i &lt;= n; i += lowbit(i)) {<br>  for (int j = y; j &lt;= m; j += lowbit(j)) {<pre><code class="hljs">// 注意这里必须得建循环变量，不能像一维数组一样直接 while (x &lt;= n) 了
+c[i][j] += v;
+</code></pre>  }<br>}<br>}<br>//子矩阵修改子矩阵查询<br>typedef long long ll;<br>ll t1[N][N], t2[N][N], t3[N][N], t4[N][N];//维护差分数组，分别是d[i][j], d[i][j]<em>i, d[i][j]</em>j, d[i][j]<em>i</em>j<br>//差分数组子矩阵加法<br>void add(ll x, ll y, ll z) {<br>for (int X = x; X &lt;= n; X += lowbit(X))<br>  for (int Y = y; Y &lt;= m; Y += lowbit(Y)) {<pre><code class="hljs">t1[X][Y] += z;
+t2[X][Y] += z * x;  // 注意是 z * x 而不是 z * X，后面同理
+t3[X][Y] += z * y;
+t4[X][Y] += z * x * y;
+</code></pre>  }<br>}<br>void range_add(ll xa, ll ya, ll xb, ll yb,<pre><code class="hljs">         ll z) {  //(xa, ya) 到 (xb, yb) 子矩阵
+</code></pre>add(xa, ya, z);<br>add(xa, yb + 1, -z);<br>add(xb + 1, ya, -z);<br>add(xb + 1, yb + 1, z);<br>}<br>//子矩阵查询<br>ll ask(ll x, ll y) {<br>ll res = 0;<br>for (int i = x; i; i -= lowbit(i))<br>  for (int j = y; j; j -= lowbit(j))<pre><code class="hljs">res += (x + 1) * (y + 1) * t1[i][j] - (y + 1) * t2[i][j] -
+       (x + 1) * t3[i][j] + t4[i][j];
+</code></pre>return res;<br>}<br>ll range_ask(ll xa, ll ya, ll xb, ll yb) {<br>return ask(xb, yb) - ask(xb, ya - 1) - ask(xa - 1, yb) + ask(xa - 1, ya - 1);<br>}</li>
 </ul>
 <h2 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h2><h4 id="实现-10"><a href="#实现-10" class="headerlink" title="实现"></a>实现</h4><ul>
 <li>基于分治思想的二叉搜索树  </li>
@@ -666,137 +537,46 @@ return ask(xb, yb) - ask(xb, ya - 1) - ask(xa - 1, yb) + ask(xa - 1, ya - 1);
 </ul>
 </li>
 <li><strong>线段树的每一个节点代表一个区间，为避免区间端点重合变成点导致答案偏少，用l表示区间左端点l，值为X[l]，用r表示区间右端点r+1，值为X[r+1]</strong>  </li>
-<li>维护区间并集需要考虑<strong>区间是否被完全覆盖</strong>，若区间被完全覆盖，则区间信息为计算后的总信息，否则区间信息为左右儿子的信息的合并  <h4 id="应用-10"><a href="#应用-10" class="headerlink" title="应用"></a>应用</h4>维护运算满足区间加法的区间信息  <h4 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">//维护区间乘和区间加的线段树
-#define ls u&lt;&lt;1//左儿子
-#define rs u&lt;&lt;1|1//右儿子
-int sum[N&lt;&lt;2];//记录区间和，节点要开4倍
-int lz1[N&lt;&lt;2], lz2[N&lt;&lt;1];//懒惰标记，分别表示加、乘，乘法优先
-//向上更新节点维护的区间信息
-inline void pushup(int u){
-sum[u]=sum[ls]+sum[rs];
-}
-//建树
-void build(int u, int l, int r){
-//初始化标记
-lz1[u]=0;
-lz2[u]=1;
-if(l==r){
-    sum[u]=a[l];
-    return;
-}
-int mid=(l+r)&gt;&gt;1;
-//二分区间
-build(ls, l, mid);
-build(rs, mid+1, r);
-pushup(u);
-}
-//区间查询
-int query(int u, int l, int r, int L, int R){
-if(R&lt;l || r&lt;L) return;//无交集返回
+<li>维护区间并集需要考虑<strong>区间是否被完全覆盖</strong>，若区间被完全覆盖，则区间信息为计算后的总信息，否则区间信息为左右儿子的信息的合并  <h4 id="应用-10"><a href="#应用-10" class="headerlink" title="应用"></a>应用</h4>维护运算满足区间加法的区间信息  <h4 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h4>```cpp<br>//维护区间乘和区间加的线段树<h1 id="define-ls-u-lt-lt-1-左儿子"><a href="#define-ls-u-lt-lt-1-左儿子" class="headerlink" title="define ls u<<1//左儿子"></a>define ls u&lt;&lt;1//左儿子</h1><h1 id="define-rs-u-lt-lt-1-1-右儿子"><a href="#define-rs-u-lt-lt-1-1-右儿子" class="headerlink" title="define rs u<<1|1//右儿子"></a>define rs u&lt;&lt;1|1//右儿子</h1>int sum[N&lt;&lt;2];//记录区间和，节点要开4倍<br>int lz1[N&lt;&lt;2], lz2[N&lt;&lt;1];//懒惰标记，分别表示加、乘，乘法优先<br>//向上更新节点维护的区间信息<br>inline void pushup(int u){<br>sum[u]=sum[ls]+sum[rs];<br>}<br>//建树<br>void build(int u, int l, int r){<br>//初始化标记<br>lz1[u]=0;<br>lz2[u]=1;<br>if(l==r){<pre><code class="hljs">sum[u]=a[l];
+return;
+</code></pre>}<br>int mid=(l+r)&gt;&gt;1;<br>//二分区间<br>build(ls, l, mid);<br>build(rs, mid+1, r);<br>pushup(u);<br>}<br>//区间查询<br>int query(int u, int l, int r, int L, int R){<br>if(R&lt;l || r&lt;L) return;//无交集返回
 if(L&lt;=l &amp;&amp; r&lt;=R) return sum[u];//节点区间被查询区间包含 
 //二分区间
-int mid=(l+r)&gt;&gt;1, ans=0;
-if(L&lt;=mid) ans+=query(ls, l, mid, L, R);
-if(mid &lt; R) ans+=query(rs, mid+1, r, L, R);
-return ans;
-}
-//向下更新节点维护的区间信息
-inline void pushdown(int u, int llen, int rlen){
-if(lz1[u] &amp;&amp; lz2[u]!=1){//节点存在懒惰标记，表示本节点已经修改，子节点待修改
-    //更新子节点信息
-    sum[ls]=(sum[ls]*lz2[u] + lz1[u]*llen);
-    sum[rs]=(sum[ls]*lz2[u] + lz1[u]*rlen);
-    //下推标记，注意标记之间优先级，这里乘法优先
-    lz1[ls]=(lz1[ls]*lz2[u] + lz1[u]);
-    lz1[rs]=(lz1[rs]*lz2[u] + lz1[u]);
-    lz2[ls]=lz2[ls]*lz2[u];
-    lz2[rs]=lz2[rs]*lz2[u];
-    //清除本节点标记
-    lz1[u]=0;
-    lz2[u]=1;
-}
-}
-//区间修改之区间加法
-void update1(int u, int l, int r, int L, int R, int val){
-if(R&lt;l || r&lt;L) return;//无交集返回
-if(L&lt;=l &amp;&amp; r&lt;=R){//节点区间被修改区间包含
-    sum[u]+=val*(r-l+1);
-    lz[u]+=val;
-    return;
-}
-int mid=(l+r)&gt;&gt;1;
-pushdown(u, mid-l+1, r-mid);//下推父节点懒惰标记更新子节点
-//二分区间
-if(L&lt;=mid) update(ls, l, mid, L, R, val);
-if(mid&lt;R) update(rs, mid+1, R, L, R, val);
-pushup(u);//合并子节点信息更新父节点信息
-}
-//区间修改之区间乘法
-void update2(int u, int l, int r, int L, int R, int val){
-if(R&lt;l || r&lt;L) return;//无交集返回
-if(L&lt;=l &amp;&amp; r&lt;=R){//节点区间被修改区间包含
-    sum[u]=sum[u]*val;
-    lz1[u]=lz1[u]*val;//乘法优先级高，同步更新加法懒惰标记
-    lz2[u]=lz2[u]*val;
-    return;
-}
-int mid=(l+r)&gt;&gt;1;
-pushdown(u, mid-l+1, r-mid);//下推父节点懒惰标记更新子节点
-//二分区间
-if(L&lt;=mid) update(ls, l, mid, L, R, val);
-if(mid&lt;R) update(rs, mid+1, R, L, R, val);
-pushup(u);//合并子节点信息更新父节点信息
-}
-//动态开点线段树
-int sum[n&lt;&lt;1], ls[n&lt;&lt;1], rs[n&lt;&lt;1], tot;//区间和，左儿子，右儿子，根节点默认为0
-//合并子节点更新父节点信息
-inline void pushup(int u){
-sum[u]=sum[ls[u]]+sum[rs[u]];
-}
-//下推父节点懒惰标记更新子节点
-inline void pushdown(int u, int llen, int rlen){
-if(lz[u]){
-    if(!ls[u]) ls[u]=++tot;//创建左儿子
-    if(!rs[u]) rs[u]=++tot;//创建右儿子
-    //修改子节点
-    sum[ls[u]]+=llen*lz[u];
-    sum[rs[u]]+=rlen*lz[u];
-    //下推标记
-    lz[ls[u]]+=lz[u];
-    lz[rs[u]]+=lz[u];
-    //清除本节点标记
-    lz[u]=0;
-}
-}
-//区间查询
-int query(int u, int l, int r, int L, int R){
-if(R&lt;l || r&lt;L) return;//无交集返回
+int mid=(l+r)&gt;&gt;1, ans=0;<br>if(L&lt;=mid) ans+=query(ls, l, mid, L, R);<br>if(mid &lt; R) ans+=query(rs, mid+1, r, L, R);<br>return ans;<br>}<br>//向下更新节点维护的区间信息<br>inline void pushdown(int u, int llen, int rlen){<br>if(lz1[u] &amp;&amp; lz2[u]!=1){//节点存在懒惰标记，表示本节点已经修改，子节点待修改<pre><code class="hljs">//更新子节点信息
+sum[ls]=(sum[ls]*lz2[u] + lz1[u]*llen);
+sum[rs]=(sum[ls]*lz2[u] + lz1[u]*rlen);
+//下推标记，注意标记之间优先级，这里乘法优先
+lz1[ls]=(lz1[ls]*lz2[u] + lz1[u]);
+lz1[rs]=(lz1[rs]*lz2[u] + lz1[u]);
+lz2[ls]=lz2[ls]*lz2[u];
+lz2[rs]=lz2[rs]*lz2[u];
+//清除本节点标记
+lz1[u]=0;
+lz2[u]=1;
+</code></pre>}<br>}<br>//区间修改之区间加法<br>void update1(int u, int l, int r, int L, int R, int val){<br>if(R&lt;l || r&lt;L) return;//无交集返回<br>if(L&lt;=l &amp;&amp; r&lt;=R){//节点区间被修改区间包含<pre><code class="hljs">sum[u]+=val*(r-l+1);
+lz[u]+=val;
+return;
+</code></pre>}<br>int mid=(l+r)&gt;&gt;1;<br>pushdown(u, mid-l+1, r-mid);//下推父节点懒惰标记更新子节点<br>//二分区间<br>if(L&lt;=mid) update(ls, l, mid, L, R, val);<br>if(mid&lt;R) update(rs, mid+1, R, L, R, val);<br>pushup(u);//合并子节点信息更新父节点信息<br>}<br>//区间修改之区间乘法<br>void update2(int u, int l, int r, int L, int R, int val){<br>if(R&lt;l || r&lt;L) return;//无交集返回<br>if(L&lt;=l &amp;&amp; r&lt;=R){//节点区间被修改区间包含<pre><code class="hljs">sum[u]=sum[u]*val;
+lz1[u]=lz1[u]*val;//乘法优先级高，同步更新加法懒惰标记
+lz2[u]=lz2[u]*val;
+return;
+</code></pre>}<br>int mid=(l+r)&gt;&gt;1;<br>pushdown(u, mid-l+1, r-mid);//下推父节点懒惰标记更新子节点<br>//二分区间<br>if(L&lt;=mid) update(ls, l, mid, L, R, val);<br>if(mid&lt;R) update(rs, mid+1, R, L, R, val);<br>pushup(u);//合并子节点信息更新父节点信息<br>}<br>//动态开点线段树<br>int sum[n&lt;&lt;1], ls[n&lt;&lt;1], rs[n&lt;&lt;1], tot;//区间和，左儿子，右儿子，根节点默认为0<br>//合并子节点更新父节点信息<br>inline void pushup(int u){<br>sum[u]=sum[ls[u]]+sum[rs[u]];<br>}<br>//下推父节点懒惰标记更新子节点<br>inline void pushdown(int u, int llen, int rlen){<br>if(lz[u]){<pre><code class="hljs">if(!ls[u]) ls[u]=++tot;//创建左儿子
+if(!rs[u]) rs[u]=++tot;//创建右儿子
+//修改子节点
+sum[ls[u]]+=llen*lz[u];
+sum[rs[u]]+=rlen*lz[u];
+//下推标记
+lz[ls[u]]+=lz[u];
+lz[rs[u]]+=lz[u];
+//清除本节点标记
+lz[u]=0;
+</code></pre>}<br>}<br>//区间查询<br>int query(int u, int l, int r, int L, int R){<br>if(R&lt;l || r&lt;L) return;//无交集返回
 if(!u) return 0;//父节点的子节点为0，空
 if(L&lt;=l &amp;&amp; r&lt;=R) return sum[u];
-int mid=l+((r-l)&gt;&gt;1);
-pushdown(u, mid-l+1, r-mid);
-int ans=0;
-if(l&lt;=mid) ans+=query(ls[u], l, mid, L, R);
-if(r&gt;mid) ans+=query(rs[u], mid+1, r, L, R);
-pushup(u);
-}
-//区间修改，引用传参方便修改父节点的子节点指向
-void update(int &amp;u, int l, int r, int L, int R, int val){
-if(R&lt;l || r&lt;L) return;//无交集返回
-if(!u) u=++tot;// 当结点为空时，创建一个新的结点
-if(L&lt;=l &amp;&amp; r&lt;=R){
-    sum[u]+=val*(r-l+1);
-    lz[u]+=val;
-    return;
-}
-int mid=l+((r-l)&gt;&gt;1);
-pushdown(u, mid-l+1, r-mid);
-if(L&lt;=mid) update(ls[u], l, mid, L, R, val);
-if(mid&lt;R) update(rs[u], mid+1, r, L, R, val);
-pushup(u);
-}
-</code></pre>
-</li>
+int mid=l+((r-l)&gt;&gt;1);<br>pushdown(u, mid-l+1, r-mid);<br>int ans=0;<br>if(l&lt;=mid) ans+=query(ls[u], l, mid, L, R);<br>if(r&gt;mid) ans+=query(rs[u], mid+1, r, L, R);<br>pushup(u);<br>}<br>//区间修改，引用传参方便修改父节点的子节点指向<br>void update(int &amp;u, int l, int r, int L, int R, int val){<br>if(R&lt;l || r&lt;L) return;//无交集返回<br>if(!u) u=++tot;// 当结点为空时，创建一个新的结点<br>if(L&lt;=l &amp;&amp; r&lt;=R){<pre><code class="hljs">sum[u]+=val*(r-l+1);
+lz[u]+=val;
+return;
+</code></pre>}<br>int mid=l+((r-l)&gt;&gt;1);<br>pushdown(u, mid-l+1, r-mid);<br>if(L&lt;=mid) update(ls[u], l, mid, L, R, val);<br>if(mid&lt;R) update(rs[u], mid+1, r, L, R, val);<br>pushup(u);<br>}</li>
 </ul>
 </li>
 </ul>
@@ -804,44 +584,13 @@ pushup(u);
 <li>优化的暴力预处理，对原数据进行适当划分，在划分的块上预处理块信息，优化时间复杂度 O(sqrt(n))  </li>
 <li>初始化分块长度为 <strong>sqrt(n)</strong>，每个点属于的块，预处理块内信息  </li>
 <li>区间修改：零散点朴素修改（同时修改所属块的整体信息），完整块全部修改后获取块的总值信息，或打上懒惰标记（标记表示完整块信息已修改，块内零散点信息待修改，零散点在块内修改或查询时需要下推标记）  </li>
-<li>区间查询：零散点朴素查询，完整块直接获取块的总值信息（考虑懒惰标记）  <h4 id="思想-3"><a href="#思想-3" class="headerlink" title="思想"></a>思想</h4><strong>零散点朴素，完整块预处理直接用</strong>  <h4 id="应用-11"><a href="#应用-11" class="headerlink" title="应用"></a>应用</h4>维护树状数组和线段树无法维护的信息，离线算法莫队算法  <h4 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-cpp">//区间修改区间查询加法
-int len, blk[N], id[N], a[N], lz[N];//块长度，块整体信息，元素所属块、元素值、懒惰标记
-//预处理
-void init()
-{
-  len=sqrt(n);
-  for(int i=1; i&lt;=n; ++i) 
-  {
-      id[i]=(i-1)/len+1;
-      s[id[i]]+=a[i];
-  }
-}
-//区间查询
-int query(int l, int r){
-  int lid=id[l], rid=id[r];
-  int ans=0;
-  if(lid==rid){//一个块内的零散点朴素求和
-      for(int i=l; i&lt;=r; ++i) ans+=a[i]+lz[lid];
-      return ans;
-  }
-  for(int i=l; id[i]==lid; ++i) ans+=a[i]+lz[lid];//零散点朴素
-  for(int i=lid+1; i&lt;rid; ++i) ans+=blk[i];//完整块直接用块整体信息
-  for(int i=r; id[i]==rid; --i) ans+=a[i]+lz[rid];//零散点朴素
+<li>区间查询：零散点朴素查询，完整块直接获取块的总值信息（考虑懒惰标记）  <h4 id="思想-3"><a href="#思想-3" class="headerlink" title="思想"></a>思想</h4><strong>零散点朴素，完整块预处理直接用</strong>  <h4 id="应用-11"><a href="#应用-11" class="headerlink" title="应用"></a>应用</h4>维护树状数组和线段树无法维护的信息，离线算法莫队算法  <h4 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h4>```cpp<br>//区间修改区间查询加法<br>int len, blk[N], id[N], a[N], lz[N];//块长度，块整体信息，元素所属块、元素值、懒惰标记<br>//预处理<br>void init()<br>{<br>  len=sqrt(n);<br>  for(int i=1; i&lt;=n; ++i)<br>  {<pre><code class="hljs">  id[i]=(i-1)/len+1;
+  s[id[i]]+=a[i];
+</code></pre>  }<br>}<br>//区间查询<br>int query(int l, int r){<br>  int lid=id[l], rid=id[r];<br>  int ans=0;<br>  if(lid==rid){//一个块内的零散点朴素求和<pre><code class="hljs">  for(int i=l; i&lt;=r; ++i) ans+=a[i]+lz[lid];
   return ans;
-}
-//区间修改
-void update(int l, int r, int val){
-  int lid=id[l], rid=id[r];
-  if(lid==rid){//一个块内的零散点朴素修改
-      for(int i=l; i&lt;=r; ++i) a[i]+=val, blk[lid]+=val;
-      return;
-  }
-  for(int i=l; id[i]==lid; ++i) a[i]+=val, blk[lid]+=val;//零散点朴素
-  for(int i=lid+1; i&lt;rid; ++i) lz[i]+=val, blk[i]+=len*val;//完整块修改块整体信息并打上懒惰标记
-  for(int i=r; id[i]==rid; --i) a[i]+=val, blk[rid]+=val;//零散点朴素
-}
-</code></pre>
-</li>
+</code></pre>  }<br>  for(int i=l; id[i]==lid; ++i) ans+=a[i]+lz[lid];//零散点朴素<br>  for(int i=lid+1; i&lt;rid; ++i) ans+=blk[i];//完整块直接用块整体信息<br>  for(int i=r; id[i]==rid; —i) ans+=a[i]+lz[rid];//零散点朴素<br>  return ans;<br>}<br>//区间修改<br>void update(int l, int r, int val){<br>  int lid=id[l], rid=id[r];<br>  if(lid==rid){//一个块内的零散点朴素修改<pre><code class="hljs">  for(int i=l; i&lt;=r; ++i) a[i]+=val, blk[lid]+=val;
+  return;
+</code></pre>  }<br>  for(int i=l; id[i]==lid; ++i) a[i]+=val, blk[lid]+=val;//零散点朴素<br>  for(int i=lid+1; i&lt;rid; ++i) lz[i]+=val, blk[i]+=len*val;//完整块修改块整体信息并打上懒惰标记<br>  for(int i=r; id[i]==rid; —i) a[i]+=val, blk[rid]+=val;//零散点朴素<br>}</li>
 </ul>
 <h2 id="平衡树"><a href="#平衡树" class="headerlink" title="平衡树"></a>平衡树</h2><p>待补充  </p>
 <h2 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分"></a>树链剖分</h2><p>待补充  </p>

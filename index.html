@@ -447,7 +447,7 @@ mjx-container[display="true"] + br {
       
       <a class="index-excerpt index-excerpt__noimg" href="/2024/04/09/acm1/" target="_self">
         <div>
-          基础模拟实现计算时间复杂度判断可行性，按题意写   注意列出所有条件与操作   应用时间复杂度可行   排序实现STL中sort是快排O(nlogn)；归并稳定O(nlogn)   思想分治   应用比较相邻或逆序对用归并，无序数组排序用快排   二分实现二分验证答案，不断逼近最值   思想答案有界且单调   应用大规模枚举，最小值最大化，最优解问题   代码int l=minn, r=maxn,
+          基础模拟实现计算时间复杂度判断可行性，按题意写   注意列出所有条件与操作   应用时间复杂度可行   排序实现STL中sort是快排O(nlogn)；归并稳定O(nlogn)   思想分治   应用比较相邻或逆序对用归并，无序数组排序用快排   二分实现二分验证答案，不断逼近最值   思想答案有界且单调   应用大规模枚举，最小值最大化，最优解问题   代码```cppint l=minn, r
         </div>
       </a>
 
@@ -713,67 +713,6 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/04/03/4/" target="_self">
-          数据结构代码模板
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/4/" target="_self">
-        <div>
-          4-1 单调栈123456int stk[N], top;//stk[i]记录下标//插入val[i]while(top&gt;0 &amp;&amp; val[stk[top]]&lt;x) --top;//弹出栈顶比当前数小的维护单调性stk[++top]=i;//查询栈顶最值stk[top];4-2 单调队列123456789int q[N];//存储下标int head=0, tail=-
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-04-03 22:30" pubdate>
-              2024-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%A8%A1%E6%9D%BF/" class="category-chain-item">模板</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%A8%A1%E6%9D%BF/">#数据结构，模板</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
         <a href="/2024/04/03/P8775/" target="_self">
           P8775
         </a>
@@ -976,6 +915,69 @@ mjx-container[display="true"] + br {
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2024-03-29 16:34" pubdate>
+              2024-03-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
+            
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/03/29/HDU4035/" target="_self">
+          HDU4035
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/HDU4035/" target="_self">
+        <div>
+          HDU4336题意：给定一棵树，从结点1出发，每个结点有三种决策：死亡回到1、逃离结束、前往下一个结点（可以是父节点或子节点），给定每个结点死亡和逃离的概率，前往下一个结点的概率相等。求从1出发到逃离走过路径的期望，若不可能逃离输出”impossible”分析：列出维度：所在结点位置，走过的路径列出决策：死亡回到1、逃离结束、前往下一个结点状态：dp[i]表示在i结点距结束走过路径的期望状态转移方
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-03-29 13:41" pubdate>
               2024-03-29
             </time>
           </div>
