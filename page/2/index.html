@@ -350,6 +350,128 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
+        <a href="/2024/04/03/P8775/" target="_self">
+          P8775
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/P8775/" target="_self">
+        <div>
+          P8775题意：给定x，从0到n往返2x次，其中1到n-1有h[i]次落脚，最多跳y距离，求最小的y分析：    跳回来和跳过去是没有区别的，可看作2x只青蛙同时从0跳到n   对于一个y，2x只青蛙可以同时从0跳到n，当且仅当，对于每个长度为y的区间都满足区间内 sum(h[i])&gt;=2x   证明：2x只青蛙跳一次能到达区间[1,y]，考虑1位置跳到y+1位置：若h[1]&lt;=h[1
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-03 13:30" pubdate>
+              2024-04-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%B4%AA%E5%BF%83%EF%BC%8C%E5%8F%8C%E6%8C%87%E9%92%88%EF%BC%8C%E4%BA%8C%E5%88%86%EF%BC%8C%E5%89%8D%E7%BC%80%E5%92%8C/">#贪心，双指针，二分，前缀和</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/04/03/P8774/" target="_self">
+          P8774
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/P8774/" target="_self">
+        <div>
+          P8774题意：从0到n，从i-1向i时有p[i]概率回到0，求从0到n的时间的期望分析：概率DP，对分数取余子问题：在第i个位置时，决策值只有向i+1走，可能导致回到0或者到达i+1维度：所处位置i，经过时间状态：dp[i]表示在i位置到n经过时间的期望DP方程：由于DP方程中含有dp[0]，故移项变换将dp[1]为左式的dp方程代入，直到代入完dp[n]，可以递推出下式系数分别用A、B、C代表
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-03 13:08" pubdate>
+              2024-04-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%8C%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#动态规划，概率与期望</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
         <a href="/2024/04/01/ZOJ3640/" target="_self">
           ZOJ3640
         </a>
@@ -837,128 +959,6 @@ mjx-container[display="true"] + br {
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E5%BC%82%E6%88%96%EF%BC%8C%E5%8D%9A%E5%BC%88%E8%AE%BA/">#异或，博弈论</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/03/24/JavaScript/" target="_self">
-          JavaScript
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/24/JavaScript/" target="_self">
-        <div>
-          JavaScript入门简介&amp;用法 JavaScript是一种轻量级的、可插入HTML页面的脚本语言   HTML中的JS脚本代码必须位于 script 元素内   放在 body 元素内   放在 head 元素内   外部 JS 文件   script 元素中 src 属性设置JS文件位置        输出 无任何打印或输出的函数   显示数据方式   弹出警告框 window.al
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-03-24 15:48" pubdate>
-              2024-03-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/03/24/style/" target="_self">
-          比赛码风
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/24/style/" target="_self">
-        <div>
-          比赛码风命名规范 CamelCase (驼峰命名法)   结构体、类的定义名首字母必须大写   常量全大写   变量名和函数名首字母小写     名字太长可以截取前两、三个字母    代码块规范所有代码块的 \{\} ，必须按以下规范写   1234567891011121314while(a &lt; b)&#123;//减少不必要空行，也避免大括号不匹配的问题    if(a &lt; b)&
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-03-24 14:05" pubdate>
-              2024-03-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%AF%94%E8%B5%9B/" class="category-chain-item">比赛</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%A7%84%E8%8C%83/">#规范</a>
             
           </div>
         
