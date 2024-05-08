@@ -350,13 +350,80 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/04/04/lanqiao2024moni/" target="_self">
+        <a href="/2024/04/07/ACM_learning/PC/" target="_self">
+          排列组合刷题
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/07/ACM_learning/PC/" target="_self">
+        <div>
+          排列组合刷题P2822题意给定 n，m和k，求对所有 0&lt;=i&lt;=n，0&lt;=j&lt;=min(i, m)有多少对 (i, j) 满足 k|C(i, j)   分析杨辉三角递推式预处理组合数的值。将组合数模k，若为0，则满足条件，不影响加法乘法。采取二位前缀和预处理满足条件的组合数数量，在查询时O(1)查询   代码12345678910111213141516171819202
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-07 15:34" pubdate>
+              2024-04-07
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">#排列组合</a>
+            
+              <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
+            
+              <a href="/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/">#快速幂</a>
+            
+              <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">#前缀和</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/04/04/luogu/lanqiao2024moni/" target="_self">
           蓝桥杯2024模拟补题
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/04/lanqiao2024moni/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/04/luogu/lanqiao2024moni/" target="_self">
         <div>
           蓝桥杯2024模拟补题E P1220题意n个路灯，给定功率 w[i] 和位置 pos[i] ，位置与路灯编号单调递增，每秒移动1米，给定初始位置 c ，要求关闭所有路灯，求开始关灯到关闭所有灯的最少功耗   分析路过路灯必定会顺手关闭，因此所有关闭的路灯在连续的一个区间内，该区间由初始位置向外扩展，且人必定在区间的两个端点之一，考虑DP   子问题为决策出当前关闭路灯后下一步去哪，可以往连续区间的
         </div>
@@ -415,13 +482,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/04/03/P8775/" target="_self">
+        <a href="/2024/04/03/luogu/P8775/" target="_self">
           P8775
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/P8775/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/luogu/P8775/" target="_self">
         <div>
           P8775题意：给定x，从0到n往返2x次，其中1到n-1有h[i]次落脚，最多跳y距离，求最小的y分析：    跳回来和跳过去是没有区别的，可看作2x只青蛙同时从0跳到n   对于一个y，2x只青蛙可以同时从0跳到n，当且仅当，对于每个长度为y的区间都满足区间内 sum(h[i])&gt;=2x   证明：2x只青蛙跳一次能到达区间[1,y]，考虑1位置跳到y+1位置：若h[1]&lt;=h[1
         </div>
@@ -476,13 +543,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/04/03/P8774/" target="_self">
+        <a href="/2024/04/03/luogu/P8774/" target="_self">
           P8774
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/P8774/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/03/luogu/P8774/" target="_self">
         <div>
           P8774题意：从0到n，从i-1向i时有p[i]概率回到0，求从0到n的时间的期望分析：概率DP，对分数取余子问题：在第i个位置时，决策值只有向i+1走，可能导致回到0或者到达i+1维度：所处位置i，经过时间状态：dp[i]表示在i位置到n经过时间的期望DP方程：由于DP方程中含有dp[0]，故移项变换将dp[1]为左式的dp方程代入，直到代入完dp[n]，可以递推出下式系数分别用A、B、C代表
         </div>
@@ -537,13 +604,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/04/01/ZOJ3640/" target="_self">
+        <a href="/2024/04/01/vj/ZOJ3640/" target="_self">
           ZOJ3640
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/01/ZOJ3640/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/01/vj/ZOJ3640/" target="_self">
         <div>
           ZOJ3640题意：初始战斗力 f ，每个怪物战斗力 c[i] 。每天随机选一个怪物，若 f 严格大于 c[i] ，则可以花 t[i]=(1+sqrt(5))/2*c[i]*c[i] 天逃出去，否则花费一天增加 c[i] 战斗力。求逃离所需天数期望分析：维度：逃离需要几天、当前战斗力状态：dp[i]表示战斗力为 i 距逃离所需天数期望DP方程：i&gt;c[j] -&gt; dp[i]+=t[j]
         </div>
@@ -584,9 +651,9 @@ mjx-container[display="true"] + br {
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
-            
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+            
+              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
             
           </div>
         
@@ -600,13 +667,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/03/29/HDU4089/" target="_self">
+        <a href="/2024/03/29/vj/HDU4089/" target="_self">
           HDU4089
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/HDU4089/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/vj/HDU4089/" target="_self">
         <div>
           HDU4089题意：有n个人排队等着在官网上激活游戏。Tomato排在第m个。对于队列中的第一个人。有一下情况：1、激活失败，留在队列中等待下一次激活（概率为p1）2、失去连接，出队列，然后排在队列的最后（概率为p2）3、激活成功，离开队列（概率为p3）4、服务器瘫痪，服务器停止激活，所有人都无法激活了。求服务器瘫痪时Tomato在队列中的位置&lt;=k的概率分析：列出维度：队列中有几个人，当前
         </div>
@@ -647,9 +714,9 @@ mjx-container[display="true"] + br {
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
-            
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+            
+              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
             
           </div>
         
@@ -663,13 +730,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/03/29/HDU4035/" target="_self">
+        <a href="/2024/03/29/vj/HDU4035/" target="_self">
           HDU4035
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/HDU4035/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/vj/HDU4035/" target="_self">
         <div>
           HDU4336题意：给定一棵树，从结点1出发，每个结点有三种决策：死亡回到1、逃离结束、前往下一个结点（可以是父节点或子节点），给定每个结点死亡和逃离的概率，前往下一个结点的概率相等。求从1出发到逃离走过路径的期望，若不可能逃离输出”impossible”分析：列出维度：所在结点位置，走过的路径列出决策：死亡回到1、逃离结束、前往下一个结点状态：dp[i]表示在i结点距结束走过路径的期望状态转移方
         </div>
@@ -710,9 +777,9 @@ mjx-container[display="true"] + br {
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
-            
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+            
+              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
             
           </div>
         
@@ -726,13 +793,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/03/29/HDU4336/" target="_self">
+        <a href="/2024/03/29/vj/HDU4336/" target="_self">
           HDU4336
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/HDU4336/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/29/vj/HDU4336/" target="_self">
         <div>
           HDU4336题意：给定N个物品，每次取得第i个物品概率为  ，求所有物品至少取一次的期望分析：由 min-max容斥，有下式：E(max(S)) =   E(min(T)) for T  SE(min(T)) = 1 /   for i in Tdfs求全集S(所有物品至少取一次)的子集T(几个物品至少取一次)，并在该过程中求和 E(min(T)) 得 E(max(T))123456789101
         </div>
@@ -789,13 +856,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/03/28/POJ2151/" target="_self">
+        <a href="/2024/03/28/vj/POJ2151/" target="_self">
           POJ2151
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/28/POJ2151/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/28/vj/POJ2151/" target="_self">
         <div>
           POJ2151题意：T个问题，M个队，已知每个队做出每个问题的概率，求所有人都至少做出一道且有人做出至少n道的概率分析：由容斥原理，P(所有人都至少做出一道且有人做出至少n道)=P(所有人都至少做出一道)-P(所有人都没做超过n道)通过DP记录每个队做出几道题的概率，然后利用容斥原理计算列举维度：第几个队伍，第几个题，做出了几道列举决策：第j题没做出来 做出来了DP方程：dp[i][j][k]=d
         </div>
@@ -836,9 +903,9 @@ mjx-container[display="true"] + br {
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
-            
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+            
+              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
             
           </div>
         
@@ -852,13 +919,13 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/03/28/SGU495/" target="_self">
+        <a href="/2024/03/28/vj/SGU495/" target="_self">
           SGU495
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/28/SGU495/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/28/vj/SGU495/" target="_self">
         <div>
           SGU495题意：n个奖励m个人，奖励拿完放空盒回去，求m个人拿到奖励的期望分析：第一个人肯定能拿到奖励，dp[1]=1。考虑第i个人，若第i-1个人拿到奖励，则第i个人拿到奖励的概率为dp[i-1]*(dp[i-1]-1.0/n)，若第i-1个人未拿到奖励，则第i个人拿到奖励的概率与第i-1个人相同，为dp[i-1]*(1-dp[i-1])。期望为每个人拿到1个奖励，即1*dp[i]，故对概率求
         </div>
@@ -899,70 +966,9 @@ mjx-container[display="true"] + br {
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
-            
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
             
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/03/28/P8746/" target="_self">
-          P8746
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/28/P8746/" target="_self">
-        <div>
-          P8746题意：n个数划分m个区间，每个数允许用两次，求区间和的最大值与最小值之差的最小值分析：首先列出所有维度，用于表示状态：第几个数用了一次、第几个数用了两次、第几个区间、最大值、最小值。接下来考虑动态规划维护的维度，该维度必须满足越大越优或越小越优的单调性，只有最大值和最小值满足单调性，其中最小值有上界 2sum/n ，故枚举最小值可以优化时间复杂度，维护最大值。因此，状态 f(i, j,
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-03-28 13:27" pubdate>
-              2024-03-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%8C%E5%89%8D%E7%BC%80%E5%92%8C/">#动态规划，前缀和</a>
+              <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
             
           </div>
         
@@ -974,7 +980,7 @@ mjx-container[display="true"] + br {
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
