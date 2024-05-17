@@ -13,32 +13,28 @@
     
     <categories>
       
-      <category>算法模板</category>
+      <category>比赛</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>基础</tag>
+      <tag>DFS</tag>
       
-      <tag>模拟</tag>
+      <tag>拓扑排序</tag>
       
-      <tag>排序</tag>
+      <tag>换根DP</tag>
       
-      <tag>二分</tag>
+      <tag>最小点覆盖</tag>
       
-      <tag>分治</tag>
+      <tag>并查集</tag>
       
-      <tag>贪心</tag>
+      <tag>多重索引</tag>
       
-      <tag>构造</tag>
+      <tag>基环树</tag>
       
-      <tag>高精度</tag>
-      
-      <tag>前缀和</tag>
-      
-      <tag>差分</tag>
+      <tag>树上染色问题</tag>
       
     </tags>
     
@@ -63,13 +59,13 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
-      <tag>构造</tag>
+      <tag>动态规划</tag>
       
       <tag>前缀和</tag>
       
-      <tag>动态规划</tag>
+      <tag>贪心</tag>
+      
+      <tag>构造</tag>
       
       <tag>堆</tag>
       
@@ -102,11 +98,11 @@
     
     <tags>
       
+      <tag>排列组合</tag>
+      
       <tag>模拟</tag>
       
       <tag>贪心</tag>
-      
-      <tag>排列组合</tag>
       
       <tag>树状数组</tag>
       
@@ -186,9 +182,9 @@
     
     <tags>
       
-      <tag>搜索</tag>
-      
       <tag>DFS</tag>
+      
+      <tag>搜索</tag>
       
       <tag>BFS</tag>
       
@@ -229,19 +225,19 @@
     
     <tags>
       
+      <tag>拓扑排序</tag>
+      
+      <tag>基环树</tag>
+      
       <tag>图论</tag>
       
       <tag>图的存储与遍历</tag>
-      
-      <tag>基环树</tag>
       
       <tag>最短路</tag>
       
       <tag>树上问题</tag>
       
       <tag>最小生成树</tag>
-      
-      <tag>拓扑排序</tag>
       
       <tag>差分约束</tag>
       
@@ -352,6 +348,8 @@
     
     <tags>
       
+      <tag>并查集</tag>
+      
       <tag>数据结构</tag>
       
       <tag>链表</tag>
@@ -365,8 +363,6 @@
       <tag>单调队列</tag>
       
       <tag>哈希表</tag>
-      
-      <tag>并查集</tag>
       
       <tag>堆</tag>
       
@@ -405,6 +401,8 @@
     
     <tags>
       
+      <tag>前缀和</tag>
+      
       <tag>基础</tag>
       
       <tag>模拟</tag>
@@ -420,8 +418,6 @@
       <tag>构造</tag>
       
       <tag>高精度</tag>
-      
-      <tag>前缀和</tag>
       
       <tag>差分</tag>
       
@@ -475,13 +471,13 @@
     
     <tags>
       
-      <tag>前缀和</tag>
-      
       <tag>排列组合</tag>
       
       <tag>欧拉定理</tag>
       
       <tag>快速幂</tag>
+      
+      <tag>前缀和</tag>
       
     </tags>
     
@@ -506,9 +502,9 @@
     
     <tags>
       
-      <tag>前缀和</tag>
-      
       <tag>动态规划</tag>
+      
+      <tag>前缀和</tag>
       
       <tag>区间DP</tag>
       
