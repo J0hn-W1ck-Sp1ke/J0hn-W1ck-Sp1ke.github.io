@@ -20,21 +20,19 @@
     
     <tags>
       
-      <tag>DFS</tag>
+      <tag>数位DP</tag>
+      
+      <tag>树上背包</tag>
+      
+      <tag>概率DP</tag>
       
       <tag>拓扑排序</tag>
       
-      <tag>换根DP</tag>
-      
-      <tag>最小点覆盖</tag>
+      <tag>差分</tag>
       
       <tag>并查集</tag>
       
-      <tag>多重索引</tag>
-      
-      <tag>基环树</tag>
-      
-      <tag>树上染色问题</tag>
+      <tag>构造</tag>
       
     </tags>
     
@@ -59,15 +57,15 @@
     
     <tags>
       
-      <tag>DFS</tag>
-      
       <tag>拓扑排序</tag>
+      
+      <tag>并查集</tag>
+      
+      <tag>DFS</tag>
       
       <tag>换根DP</tag>
       
       <tag>最小点覆盖</tag>
-      
-      <tag>并查集</tag>
       
       <tag>多重索引</tag>
       
@@ -98,17 +96,17 @@
     
     <tags>
       
+      <tag>构造</tag>
+      
       <tag>动态规划</tag>
       
       <tag>前缀和</tag>
       
+      <tag>贪心</tag>
+      
       <tag>堆</tag>
       
       <tag>线段树</tag>
-      
-      <tag>贪心</tag>
-      
-      <tag>构造</tag>
       
       <tag>图论</tag>
       
@@ -139,11 +137,11 @@
       
       <tag>排列组合</tag>
       
-      <tag>树状数组</tag>
-      
       <tag>模拟</tag>
       
       <tag>贪心</tag>
+      
+      <tag>树状数组</tag>
       
       <tag>同余</tag>
       
@@ -172,13 +170,17 @@
     
     <tags>
       
-      <tag>动态规划</tag>
+      <tag>数位DP</tag>
       
-      <tag>区间DP</tag>
+      <tag>概率DP</tag>
+      
+      <tag>动态规划</tag>
       
       <tag>线性DP</tag>
       
       <tag>背包DP</tag>
+      
+      <tag>区间DP</tag>
       
       <tag>DAG上DP</tag>
       
@@ -188,13 +190,9 @@
       
       <tag>插头DP</tag>
       
-      <tag>数位DP</tag>
-      
       <tag>计数DP</tag>
       
       <tag>动态DP</tag>
-      
-      <tag>概率DP</tag>
       
       <tag>DP优化</tag>
       
@@ -440,6 +438,10 @@
     
     <tags>
       
+      <tag>差分</tag>
+      
+      <tag>构造</tag>
+      
       <tag>前缀和</tag>
       
       <tag>基础</tag>
@@ -454,11 +456,7 @@
       
       <tag>贪心</tag>
       
-      <tag>构造</tag>
-      
       <tag>高精度</tag>
-      
-      <tag>差分</tag>
       
     </tags>
     
@@ -483,9 +481,9 @@
     
     <tags>
       
-      <tag>动态规划</tag>
-      
       <tag>容斥原理</tag>
+      
+      <tag>动态规划</tag>
       
     </tags>
     
@@ -510,13 +508,13 @@
     
     <tags>
       
-      <tag>前缀和</tag>
-      
       <tag>排列组合</tag>
       
       <tag>欧拉定理</tag>
       
       <tag>快速幂</tag>
+      
+      <tag>前缀和</tag>
       
     </tags>
     

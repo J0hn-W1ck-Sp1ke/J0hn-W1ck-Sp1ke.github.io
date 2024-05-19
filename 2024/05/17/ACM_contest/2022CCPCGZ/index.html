@@ -24,16 +24,15 @@
 <meta property="og:description" content="补题报告M题意求满足  的序列  的方案数。  ，  ，  ，  。 题解考虑数位 DP。考虑二进制的每一位，对于固定的二进制位下，  表示在该位有多少对 (0, 1) 对，若第 cur 位上有 num 个 1，则会产生  的贡献。   通过数位 DP 枚举 每一位有多少个 1。一次性跑 k 个数并记录有多少个数达到了上界。状态  表示当前从高到低枚举第 cur 位二进制有 cnt 个数达到了上界">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-17T05:40:51.658Z">
-<meta property="article:modified_time" content="2024-05-19T10:40:31.631Z">
+<meta property="article:modified_time" content="2024-05-19T10:43:01.874Z">
 <meta property="article:author" content="Sp1ke">
-<meta property="article:tag" content="DFS">
+<meta property="article:tag" content="数位DP">
+<meta property="article:tag" content="树上背包">
+<meta property="article:tag" content="概率DP">
 <meta property="article:tag" content="拓扑排序">
-<meta property="article:tag" content="换根DP">
-<meta property="article:tag" content="最小点覆盖">
+<meta property="article:tag" content="差分">
 <meta property="article:tag" content="并查集">
-<meta property="article:tag" content="多重索引">
-<meta property="article:tag" content="基环树">
-<meta property="article:tag" content="树上染色问题">
+<meta property="article:tag" content="构造">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -464,21 +463,19 @@ mjx-container[display="true"] + br {
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/DFS/" class="print-no-link">#DFS</a>
+        <a href="/tags/%E6%95%B0%E4%BD%8DDP/" class="print-no-link">#数位DP</a>
+      
+        <a href="/tags/%E6%A0%91%E4%B8%8A%E8%83%8C%E5%8C%85/" class="print-no-link">#树上背包</a>
+      
+        <a href="/tags/%E6%A6%82%E7%8E%87DP/" class="print-no-link">#概率DP</a>
       
         <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="print-no-link">#拓扑排序</a>
       
-        <a href="/tags/%E6%8D%A2%E6%A0%B9DP/" class="print-no-link">#换根DP</a>
-      
-        <a href="/tags/%E6%9C%80%E5%B0%8F%E7%82%B9%E8%A6%86%E7%9B%96/" class="print-no-link">#最小点覆盖</a>
+        <a href="/tags/%E5%B7%AE%E5%88%86/" class="print-no-link">#差分</a>
       
         <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="print-no-link">#并查集</a>
       
-        <a href="/tags/%E5%A4%9A%E9%87%8D%E7%B4%A2%E5%BC%95/" class="print-no-link">#多重索引</a>
-      
-        <a href="/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/" class="print-no-link">#基环树</a>
-      
-        <a href="/tags/%E6%A0%91%E4%B8%8A%E6%9F%93%E8%89%B2%E9%97%AE%E9%A2%98/" class="print-no-link">#树上染色问题</a>
+        <a href="/tags/%E6%9E%84%E9%80%A0/" class="print-no-link">#构造</a>
       
     </div>
   
