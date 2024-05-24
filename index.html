@@ -350,6 +350,71 @@ mjx-container[display="true"] + br {
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
+        <a href="/2024/05/23/ACM_learning/STL/" target="_self">
+          STL 容器 与 库函数
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/05/23/ACM_learning/STL/" target="_self">
+        <div>
+          容器vector 动态数组。在局部区域中（比如局部函数里面）开vector数组，是在堆空间里面开的。在局部区域开数组是在栈空间开的，而栈空间比较小，如果开了非常长的数组就会发生爆栈。故局部区域不可以开大长度数组，但是可以开大长度vector。  1234567891011121314151617181920212223242526#include &lt;vector&gt;//初始化vector
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-23 23:36" pubdate>
+              2024-05-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AF%AD%E6%B3%95/" class="category-chain-item">语法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/STL/">#STL</a>
+            
+              <a href="/tags/%E5%AE%B9%E5%99%A8/">#容器</a>
+            
+              <a href="/tags/%E5%BA%93%E5%87%BD%E6%95%B0/">#库函数</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
         <a href="/2024/05/19/ACM_contest/2023GDCPC/" target="_self">
           The 2023 Guangdong Provincial Collegiate Programming Contest
         </a>
@@ -695,13 +760,13 @@ mjx-container[display="true"] + br {
             
               <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
             
-              <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
-            
-              <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
-            
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
             
+              <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
+            
               <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">#前缀和</a>
+            
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
             
               <a href="/tags/%E5%A0%86/">#堆</a>
             
@@ -774,11 +839,11 @@ mjx-container[display="true"] + br {
             
               <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
             
+              <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">#排列组合</a>
+            
               <a href="/tags/%E5%90%8C%E4%BD%99/">#同余</a>
             
               <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">#博弈论</a>
-            
-              <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">#排列组合</a>
             
           </div>
         
@@ -800,7 +865,7 @@ mjx-container[display="true"] + br {
       
       <a class="index-excerpt index-excerpt__noimg" href="/2024/04/17/ACM_learning/acm3/" target="_self">
         <div>
-          动态规划思想与实现核心思想与相关定义核心思想：从最简单的子问题开始，逐步扩大子问题的规模，最优解一定是从过去某一个子问题的最优解转移而来的    决策 会被决策影响的变量是状态特征     状态 维度的信息是离散的下标（取值范围），状态是维度组合表达的语义信息   维度的值描述具体的状态，状态的值是最大/小值或方案数     DP方程 动态规划本质上是一个DAG上的递推，按拓扑序求解保证无后效性
+          动态规划维度 -&gt; 状态 -&gt; 状态转移方程 -&gt; 结果表和解决方案 思想与实现核心思想与相关定义 通常基于问题的起始状态以及连续状态之间的循环公式或关系。问题的状态通常代表子解决方案，即部分解决方案或基于给定输入的子集的解决方案。并且状态是根据之前构建的状态一一构建的。 状态域 (w_1,...,w_n)\rightarrow result 是定义了映射结果的状态集合  动态规
         </div>
       </a>
 
@@ -845,11 +910,11 @@ mjx-container[display="true"] + br {
             
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
             
-              <a href="/tags/%E5%8C%BA%E9%97%B4DP/">#区间DP</a>
-            
               <a href="/tags/%E7%BA%BF%E6%80%A7DP/">#线性DP</a>
             
               <a href="/tags/%E8%83%8C%E5%8C%85DP/">#背包DP</a>
+            
+              <a href="/tags/%E5%8C%BA%E9%97%B4DP/">#区间DP</a>
             
               <a href="/tags/DAG%E4%B8%8ADP/">#DAG上DP</a>
             
@@ -1022,81 +1087,6 @@ mjx-container[display="true"] + br {
               <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7%E7%9B%B8%E5%85%B3/">#图的连通性相关</a>
             
               <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">#二分图</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/04/10/ACM_learning/acm7/" target="_self">
-          字符串专题
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/10/ACM_learning/acm7/" target="_self">
-        <div>
-          字符串专题字符串匹配问题简介又称模式匹配，在文本串S(len=n)中寻找模式串T(len=m)   类型 单模式串匹配   多模式串匹配   其他    字符串哈希实现：进制哈希(base=29或131或233) 自然溢出：unsigned long long 自动对2的64次方取模   多重哈希：固定进制，两次哈希模数为两个不同的1e9大小素数，19260817和19660813   大质数：模
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-04-10 21:41" pubdate>
-              2024-04-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="category-chain-item">算法模板</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/">#字典树</a>
-            
-              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
-            
-              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/">#字符串哈希</a>
-            
-              <a href="/tags/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/">#前缀函数</a>
-            
-              <a href="/tags/KMP/">#KMP</a>
-            
-              <a href="/tags/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/">#AC自动机</a>
-            
-              <a href="/tags/Manacher/">#Manacher</a>
-            
-              <a href="/tags/%E5%9B%9E%E6%96%87%E6%A0%91PAM/">#回文树PAM</a>
             
           </div>
         
